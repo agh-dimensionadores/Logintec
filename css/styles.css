@@ -1651,6 +1651,32 @@ a.contact-item:hover {
   transform: translateY(0);
 }
 
+.reveal-stat {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s var(--ease),
+    transform 0.65s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+
+.reveal-stat.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stat .welcome-stat__icon {
+  transform: scale(0.5);
+  opacity: 0;
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.35, 0.64, 1) 0.08s,
+    opacity 0.4s var(--ease) 0.05s;
+}
+
+.reveal-stat.visible .welcome-stat__icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /* ── EMPRESA PAGE ── */
 .page-empresa {
   background: var(--white);
@@ -2075,25 +2101,91 @@ a.contact-item:hover {
 
 /* ── RESPONSIVE ── */
 @media (min-width: 1025px) and (max-width: 1440px) {
+  .section--welcome {
+    padding: 48px 0 72px;
+  }
+
   .welcome-split {
-    grid-template-columns: 0.88fr 1.12fr;
-    gap: 40px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(28px, 3vw, 40px);
+    align-items: center;
+    margin-bottom: 40px;
+    /* Intro + servicios ocupan el viewport; las stats quedan debajo */
+    min-height: calc(100svh - var(--header-height) - 48px);
+  }
+
+  .welcome-intro__line {
+    margin-bottom: 18px;
   }
 
   .welcome-intro__title {
-    font-size: 2.35rem;
+    font-size: clamp(2rem, 2.3vw, 2.35rem);
+    margin-bottom: 20px;
   }
 
   .welcome-intro__text {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 0.35vw + 0.95rem, 1.08rem);
+    line-height: 1.68;
+    margin-bottom: 14px;
+  }
+
+  .welcome-intro__btn {
+    margin-top: 12px;
   }
 
   .welcome-services-panel {
-    padding: 34px 28px;
+    padding: 30px 28px;
+    margin-left: clamp(28px, 4vw, 52px);
+  }
+
+  .welcome-services-panel__label {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
   }
 
   .welcome-services-panel__grid {
-    gap: 20px 16px;
+    gap: 18px 16px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) and (max-height: 820px) {
+  .section--welcome {
+    padding-top: 36px;
+  }
+
+  .welcome-split {
+    min-height: calc(100svh - var(--header-height) - 36px);
+    gap: 24px;
+  }
+
+  .welcome-intro__line {
+    margin-bottom: 14px;
+  }
+
+  .welcome-intro__title {
+    margin-bottom: 16px;
+  }
+
+  .welcome-intro__text {
+    line-height: 1.62;
+    margin-bottom: 12px;
+  }
+
+  .welcome-intro__btn {
+    margin-top: 10px;
+  }
+
+  .welcome-services-panel {
+    padding: 26px 24px;
+  }
+
+  .welcome-services-panel__label {
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+  }
+
+  .welcome-services-panel__grid {
+    gap: 14px 14px;
   }
 }
 

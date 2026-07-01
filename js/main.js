@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileMenu();
   initScrollReveal();
+  initWelcomeStatsReveal();
   initProductCards();
   initContactForm();
   initSmoothAnchors();
@@ -77,6 +78,34 @@ function initScrollReveal() {
   );
 
   reveals.forEach((el) => observer.observe(el));
+}
+
+function initWelcomeStatsReveal() {
+  const containers = document.querySelectorAll('.welcome-stats');
+
+  containers.forEach((container) => {
+    const stats = container.querySelectorAll('.reveal-stat');
+    if (!stats.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          stats.forEach((stat, index) => {
+            setTimeout(() => {
+              stat.classList.add('visible');
+            }, index * 180);
+          });
+
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    observer.observe(container);
+  });
 }
 
 /* Cubiscan product card interaction */
