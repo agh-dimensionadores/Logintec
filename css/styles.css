@@ -1814,7 +1814,7 @@ a.contact-item:hover {
   margin-top: -72px;
   position: relative;
   z-index: 3;
-  padding-bottom: 0;
+  padding-bottom: clamp(40px, 5vw, 64px);
 }
 
 .empresa-bar__inner {
@@ -1942,7 +1942,7 @@ a.contact-item:hover {
 }
 
 .empresa-mv {
-  margin-top: 28px;
+  margin-top: 0;
   padding-bottom: clamp(64px, 8vw, 96px);
   background: var(--white);
 }
@@ -1951,16 +1951,21 @@ a.contact-item:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  width: 100%;
   min-height: clamp(440px, 38vw, 520px);
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 18px 52px rgba(58, 15, 31, 0.14);
+  box-shadow: none;
 }
 
 .empresa-mv__panel {
   position: relative;
   background: var(--burgundy-900);
-  padding: clamp(36px, 3.8vw, 52px) clamp(32px, 3.5vw, 56px);
+  padding:
+    clamp(36px, 3.8vw, 52px)
+    clamp(32px, 3.5vw, 48px)
+    clamp(36px, 3.8vw, 52px)
+    max(28px, calc((100vw - var(--container)) / 2 + 28px));
   color: var(--white);
   overflow: hidden;
   display: flex;
@@ -2476,6 +2481,152 @@ a.contact-item:hover {
   }
 }
 
+.dim-brands-intro {
+  padding: clamp(40px, 5vw, 56px) 0 clamp(28px, 3.5vw, 40px);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-100);
+  overflow: hidden;
+}
+
+.dim-brands-intro__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: clamp(44px, 5.5vw, 56px);
+  text-align: center;
+}
+
+.dim-brands-intro__line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--green-500);
+  flex-shrink: 0;
+}
+
+.dim-brands-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy-800);
+  margin: 0;
+}
+
+.dim-brands-intro__marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: clamp(8px, 1.5vw, 16px);
+  padding: clamp(18px, 2.5vw, 24px) 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+.dim-brands-intro__marquee::before,
+.dim-brands-intro__marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--gray-200) 0,
+    var(--gray-200) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dim-brands-intro__marquee::before { left: 0; }
+.dim-brands-intro__marquee::after { right: 0; }
+
+.dim-brands-intro__track {
+  display: flex;
+  width: max-content;
+  animation: dimBrandsMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.dim-brands-intro__marquee:hover .dim-brands-intro__track {
+  animation-play-state: paused;
+}
+
+.dim-brands-intro__group {
+  display: flex;
+  align-items: center;
+  gap: clamp(56px, 8vw, 96px);
+  padding-right: clamp(56px, 8vw, 96px);
+}
+
+.dim-brands-intro__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.dim-brands-intro__logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.dim-brands-intro__logo img {
+  display: block;
+  width: auto;
+  height: clamp(40px, 5vw, 56px);
+  max-width: min(180px, 30vw);
+  object-fit: contain;
+}
+
+.dim-brands-intro__logo[href="#agh"] img,
+.dim-brands-intro__logo[href="#cubetape"] img {
+  height: clamp(52px, 6.5vw, 72px);
+  max-width: min(220px, 34vw);
+}
+
+@keyframes dimBrandsMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dim-brands-intro__track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(24px, 4vw, 40px);
+  }
+
+  .dim-brands-intro__group {
+    padding-right: 0;
+    gap: clamp(24px, 4vw, 40px);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dim-brands-intro__group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .dim-brands-intro__marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
 .dim-brands-stack {
   position: relative;
 }
@@ -2580,6 +2731,12 @@ a.contact-item:hover {
   max-width: 240px;
   object-fit: contain;
   object-position: left center;
+}
+
+#agh .dim-brand__brandmark-logo,
+#cubetape .dim-brand__brandmark-logo {
+  height: clamp(60px, 6.5vw, 82px);
+  max-width: 300px;
 }
 
 .dim-brand__brandmark--text {
