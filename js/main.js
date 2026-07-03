@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollReveal();
   initWelcomeStatsReveal();
+  initDimensionadoresReveal();
   initProductCards();
   initContactForm();
   initSmoothAnchors();
@@ -106,6 +107,97 @@ function initWelcomeStatsReveal() {
 
     observer.observe(container);
   });
+}
+
+function initDimensionadoresReveal() {
+  initDimHeroCounters();
+
+  const sections = document.querySelectorAll('.dim-section, .dim-hero');
+
+  if (!sections.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  sections.forEach((section) => {
+    const items = section.querySelectorAll('.dim-reveal');
+    if (!items.length) return;
+
+    if (prefersReduced) {
+      items.forEach((item) => item.classList.add('visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * 120);
+          });
+
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    observer.observe(section);
+  });
+}
+
+function initDimHeroCounters() {
+  const nums = document.querySelectorAll('.dim-hero__stat-num[data-count]');
+  if (!nums.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const formatValue = (el, value) => {
+    const rounded = Math.round(value);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const text = el.dataset.format === 'thousand'
+      ? rounded.toLocaleString('es-AR')
+      : String(rounded);
+    return `${prefix}${text}${suffix}`;
+  };
+
+  const runCount = (el) => {
+    const target = Number(el.dataset.count);
+    if (Number.isNaN(target)) return;
+
+    if (prefersReduced) {
+      el.textContent = formatValue(el, target);
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatValue(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        runCount(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  nums.forEach((num) => observer.observe(num));
 }
 
 /* Cubiscan product card interaction */

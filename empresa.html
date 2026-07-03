@@ -20,18 +20,13 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo">
-        <span class="logo__word">Logi</span>
-        <svg class="logo__accent" viewBox="0 0 36 44" fill="none" aria-hidden="true">
-          <path d="M4 40 L18 4 L32 40 Z" fill="#76b82a"/>
-          <path d="M10 32 L26 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="logo__word">tec</span>
+        <img src="assets/logo2.png" alt="Logintec" class="logo__img" width="180" height="48" loading="eager" />
       </a>
 
       <nav class="nav" id="nav">
         <a href="index.html#logistica" data-i18n="nav.services">Servicios</a>
         <a href="empresa.html" class="nav__active" data-i18n="nav.company">Empresa</a>
-        <a href="index.html#cubiscan" data-i18n="nav.volumetry">Volumetría</a>
+        <a href="dimensionadores.html" data-i18n="nav.volumetry">Volumetría</a>
         <a href="index.html#contacto" class="nav__mobile-cta" data-i18n="nav.contact">Contáctenos</a>
       </nav>
 
@@ -69,7 +64,7 @@
             <p class="empresa-hero__text" data-i18n="empresa.hero.p1">Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), Repuestos críticos y Soluciones de Valor Agregado (VAS), tales como fullfilment, reflashing, screening y distribución.</p>
             <p class="empresa-hero__text" data-i18n="empresa.hero.p2">De todas formas, el fuerte de Logintec se basa en su capacidad de implementar soluciones que se adecuen a las necesidades de los clientes en término de costos y niveles de servicio.</p>
             <a href="#historia" class="hero-pill-btn empresa-hero__cta">
-              <span data-i18n="empresa.hero.cta">Conocé nuestra historia</span>
+              <span data-i18n="empresa.hero.cta">Contactanos</span>
               <span class="hero-pill-btn__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
@@ -157,34 +152,40 @@
     <!-- Misión / Visión -->
     <section class="empresa-mv" id="historia">
       <div class="container">
-        <div class="empresa-mv__grid reveal">
+        <div class="empresa-mv__shell reveal">
           <div class="empresa-mv__panel">
-            <div class="empresa-mv__map" aria-hidden="true"></div>
             <div class="empresa-mv__row">
               <div class="empresa-mv__card">
-                <div class="empresa-mv__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <div class="empresa-mv__card-head">
+                  <div class="empresa-mv__card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                  </div>
+                  <h2 data-i18n="empresa.mission.title">Nuestra misión</h2>
                 </div>
-                <h2 data-i18n="empresa.mission.title">Nuestra misión</h2>
-                <p data-i18n="empresa.mission.text">Diseñar, gestionar e implementar soluciones logísticas de valor agregado que se adapten a las necesidades de nuestros clientes en términos de costos y niveles de servicio, con foco en SPL, repuestos críticos y VAS.</p>
+                <p data-i18n="empresa.mission.text">Brindar soluciones logísticas críticas y tecnología de dimensionamiento inteligente que optimicen las operaciones de nuestros clientes, generando valor y relaciones de largo plazo.</p>
               </div>
               <div class="empresa-mv__card">
-                <div class="empresa-mv__card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <div class="empresa-mv__card-head">
+                  <div class="empresa-mv__card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                  </div>
+                  <h2 data-i18n="empresa.vision.title">Nuestra visión</h2>
                 </div>
-                <h2 data-i18n="empresa.vision.title">Nuestra visión</h2>
-                <p data-i18n="empresa.vision.text">Ser referentes en logística crítica en Argentina, con soluciones competitivas, efectivas y un top management orientado a la excelencia operativa.</p>
+                <p data-i18n="empresa.vision.text">Ser líderes en soluciones logísticas y tecnológicas en Latinoamérica, reconocidos por nuestra innovación, calidad de servicio y compromiso con el crecimiento de nuestros clientes.</p>
               </div>
             </div>
             <div class="empresa-mv__presence">
-              <h3 data-i18n="empresa.presence.title">Presencia en todo el país</h3>
-              <p data-i18n="empresa.presence.desc">Red nacional de entregas NFO, NBD y transporte terrestre para llegar a cada rincón de la República Argentina.</p>
+              <div class="empresa-mv__map" aria-hidden="true"></div>
+              <div class="empresa-mv__presence-text">
+                <h3 data-i18n="empresa.presence.title">Presencia en todo el país</h3>
+                <p data-i18n="empresa.presence.desc">Operaciones propias y socios estratégicos en los principales puntos logísticos.</p>
+              </div>
             </div>
           </div>
           <div class="empresa-mv__gallery">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy" />
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy" />
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy" />
+            <img src="assets/extras/avion.jpeg" alt="" loading="lazy" />
+            <img src="assets/extras/deposito.jpeg" alt="" loading="lazy" />
+            <img src="assets/marcas/cs100/CS-100-cart-angled-left-long-box-and-laptop-display-on.png" alt="" loading="lazy" />
           </div>
         </div>
       </div>
@@ -232,12 +233,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="index.html" class="logo logo--footer">
-          <span class="logo__word">Logi</span>
-          <svg class="logo__accent" viewBox="0 0 36 44" fill="none" aria-hidden="true">
-            <path d="M4 40 L18 4 L32 40 Z" fill="#76b82a"/>
-            <path d="M10 32 L26 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-          <span class="logo__word">tec</span>
+          <img src="assets/logo.png" alt="Logintec" class="logo__img" width="180" height="48" loading="lazy" />
         </a>
         <p data-i18n="footer.desc">Soluciones logísticas críticas y sistemas de dimensionamiento Cubiscan.</p>
       </div>
@@ -250,8 +246,8 @@
         </div>
         <div>
           <h4 data-i18n="footer.cubiscan">Cubiscan</h4>
-          <a href="index.html#cubiscan" data-i18n="footer.equipment">Equipos</a>
-          <a href="index.html#cubiscan" data-i18n="footer.volumetry">Volumetría</a>
+          <a href="dimensionadores.html" data-i18n="footer.equipment">Equipos</a>
+          <a href="dimensionadores.html" data-i18n="footer.volumetry">Volumetría</a>
           <a href="index.html#contacto" data-i18n="footer.demo">Demostración</a>
         </div>
         <div>
