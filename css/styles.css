@@ -2162,13 +2162,13 @@ a.contact-item:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 88% center;
-  transform: scale(1.08);
+  object-position: 58% center;
+  transform: scale(1.04);
   animation: dimHeroZoom 18s ease-out forwards;
 }
 
 @keyframes dimHeroZoom {
-  from { transform: scale(1.08); }
+  from { transform: scale(1.04); }
   to { transform: scale(1); }
 }
 
@@ -2762,6 +2762,16 @@ a.contact-item:hover {
   filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
 }
 
+#conlida .dim-brand__visual {
+  overflow: visible;
+}
+
+.dim-brand__product--conlida {
+  max-height: min(860px, 88vh);
+  transform: scale(1.65);
+  transform-origin: center center;
+}
+
 .dim-brand__floats {
   position: absolute;
   right: -8px;
@@ -2945,6 +2955,11 @@ a.contact-item:hover {
 
   .dim-brand__product {
     max-height: calc(100svh - var(--header-height) - 120px);
+  }
+
+  .dim-brand__product--conlida {
+    max-height: calc(100svh - var(--header-height) - 24px);
+    transform: scale(1.5);
   }
 
   .dim-brand__float-card {
