@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothAnchors();
   initNavActive();
   initHeroRotate();
+  initEquiposCatalog();
 });
 
 /* Header scroll behavior */
@@ -112,13 +113,42 @@ function initWelcomeStatsReveal() {
 function initDimensionadoresReveal() {
   initDimHeroCounters();
 
-  const sections = document.querySelectorAll('.dim-section, .dim-hero');
-
-  if (!sections.length) return;
-
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  sections.forEach((section) => {
+  const revealItems = (items) => {
+    items.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('visible');
+      }, index * 120);
+    });
+  };
+
+  /* Brand panels: observe the scrolling panel (not the sticky section) */
+  document.querySelectorAll('.dim-brand-panel').forEach((panel) => {
+    const items = panel.querySelectorAll('.dim-reveal');
+    if (!items.length) return;
+
+    if (prefersReduced) {
+      items.forEach((item) => item.classList.add('visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          revealItems(items);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.28, rootMargin: '0px 0px -12% 0px' }
+    );
+
+    observer.observe(panel);
+  });
+
+  /* Other dimensionadores sections / hero */
+  document.querySelectorAll('.dim-section:not(.dim-brand), .dim-hero').forEach((section) => {
     const items = section.querySelectorAll('.dim-reveal');
     if (!items.length) return;
 
@@ -131,13 +161,7 @@ function initDimensionadoresReveal() {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('visible');
-            }, index * 120);
-          });
-
+          revealItems(items);
           observer.unobserve(entry.target);
         });
       },
@@ -377,6 +401,76 @@ function initSmoothAnchors() {
 
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
+function initEquiposCatalog() {
+  const grid = document.getElementById('equiposGrid');
+  const filters = document.getElementById('equiposFilters');
+  if (!grid || !filters) return;
+
+  const tabs = filters.querySelectorAll('.equipos-filters__tab');
+  const sortSelect = document.getElementById('equiposSort');
+  let activeFilter = 'all';
+
+  const getCards = () => Array.from(grid.querySelectorAll('.eq-card'));
+
+  const applyFilter = () => {
+    getCards().forEach((card) => {
+      const cats = (card.dataset.category || '').split(/\s+/);
+      const match = activeFilter === 'all' || cats.includes(activeFilter);
+      card.classList.toggle('is-hidden', !match);
+    });
+  };
+
+  const applySort = () => {
+    const mode = sortSelect?.value || 'featured';
+    const cards = getCards();
+    cards.sort((a, b) => {
+      if (mode === 'name') {
+        return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
+      }
+      return Number(a.dataset.featured || 99) - Number(b.dataset.featured || 99);
+    });
+    cards.forEach((card) => grid.appendChild(card));
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeFilter = tab.dataset.filter || 'all';
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      applyFilter();
+    });
+  });
+
+  sortSelect?.addEventListener('change', applySort);
+  applySort();
+  applyFilter();
+  initEquiposGalleries(grid);
+}
+
+function initEquiposGalleries(root) {
+  root.querySelectorAll('[data-gallery]').forEach((gallery) => {
+    const images = Array.from(gallery.querySelectorAll('img'));
+    const dots = Array.from(gallery.querySelectorAll('.eq-card__dot'));
+    if (images.length < 2) return;
+
+    const show = (index) => {
+      images.forEach((img, i) => img.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        show(Number(dot.dataset.index) || 0);
+      });
     });
   });
 }
