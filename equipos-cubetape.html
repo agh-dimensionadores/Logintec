@@ -35,7 +35,9 @@
   </header>
   <main>
     <section class="equipos-hero">
-      <div class="equipos-hero__media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80&auto=format&fit=crop" alt="" loading="eager" /></div>
+      <div class="equipos-hero__media equipos-hero__media--cubetape" aria-hidden="true">
+        <img src="assets/marcas/cubetape/fondo1.png" alt="" loading="eager" />
+      </div>
       <div class="container">
         <a href="dimensionadores.html#cubetape" class="equipos-hero__back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="dim.equipos.back">Volver a Volumetría</span></a>
         <div class="equipos-hero__brand equipos-hero__brand--cubetape"><img src="assets/marcas/cubetape/logo3.png" alt="CubeTape" loading="eager" /></div>
@@ -55,15 +57,11 @@
             <button type="button" class="equipos-filters__tab is-active" data-filter="all" aria-pressed="true"><span data-i18n="dim.equipos.filter.all">Todos</span></button>
             <button type="button" class="equipos-filters__tab" data-filter="estaticos" aria-pressed="false"><span data-i18n="dim.equipos.filter.static">Estáticos</span></button>
             <button type="button" class="equipos-filters__tab" data-filter="dinamicos" aria-pressed="false"><span data-i18n="dim.equipos.filter.dynamic">Dinámicos</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="sobremesa" aria-pressed="false"><span data-i18n="dim.equipos.filter.desktop">Sobremesa</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="industriales" aria-pressed="false"><span data-i18n="dim.equipos.filter.industrial">Industriales</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="pallets" aria-pressed="false"><span data-i18n="dim.equipos.filter.pallets">Pallets</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="cintas" aria-pressed="false"><span data-i18n="dim.equipos.filter.belt">Cintas</span></button>
           </div>
           <label class="equipos-filters__sort"><span data-i18n="dim.equipos.sort.label">Ordenar por:</span><select id="equiposSort"><option value="featured" data-i18n="dim.equipos.sort.featured">Más vendidos</option><option value="name" data-i18n="dim.equipos.sort.name">Nombre</option></select></label>
         </div>
         <div class="equipos-grid" id="equiposGrid">
-          <article class="eq-card" data-category="estaticos sobremesa" data-name="CubeTape" data-featured="1">
+          <article class="eq-card" data-category="estaticos sobremesa" data-name="CubeTape" data-featured="1" data-datasheet="assets/marcas/cubetape/CubeTape_Brochure.pdf" data-video="https://youtu.be/5fCWC03Iv8I">
             <span class="eq-card__badge eq-card__badge--green">Best seller</span>
             <div class="eq-card__media"><img src="assets/marcas/cubetape/cubetapefoto2.png" alt="CubeTape" loading="lazy" /></div>
             <div class="eq-card__body">
@@ -74,7 +72,12 @@
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg><span>±1 mm</span></div>
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7h8v10H8zM5 10v4M19 10v4"/></svg><span>Bluetooth</span></div>
               </div>
-              <a href="assets/marcas/cubetape/CubeTape_Brochure.pdf" class="eq-card__link" target="_blank" rel="noopener noreferrer"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="eq-card__highlights">
+                <li data-i18n="dim.equipos.ct.f1">Medición portátil en cualquier punto de la operación</li>
+                <li data-i18n="dim.equipos.ct.f2">Captura largo, ancho y alto en segundos</li>
+                <li data-i18n="dim.equipos.ct.f3">Envío de datos por Bluetooth a tu sistema</li>
+              </ul>
+              <button type="button" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </article>
         </div>

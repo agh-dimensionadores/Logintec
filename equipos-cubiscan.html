@@ -73,10 +73,6 @@
             <button type="button" class="equipos-filters__tab is-active" data-filter="all" aria-pressed="true"><span data-i18n="dim.equipos.filter.all">Todos</span></button>
             <button type="button" class="equipos-filters__tab" data-filter="estaticos" aria-pressed="false"><span data-i18n="dim.equipos.filter.static">Estáticos</span></button>
             <button type="button" class="equipos-filters__tab" data-filter="dinamicos" aria-pressed="false"><span data-i18n="dim.equipos.filter.dynamic">Dinámicos</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="sobremesa" aria-pressed="false"><span data-i18n="dim.equipos.filter.desktop">Sobremesa</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="industriales" aria-pressed="false"><span data-i18n="dim.equipos.filter.industrial">Industriales</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="pallets" aria-pressed="false"><span data-i18n="dim.equipos.filter.pallets">Pallets</span></button>
-            <button type="button" class="equipos-filters__tab" data-filter="cintas" aria-pressed="false"><span data-i18n="dim.equipos.filter.belt">Cintas</span></button>
           </div>
           <label class="equipos-filters__sort">
             <span data-i18n="dim.equipos.sort.label">Ordenar por:</span>
@@ -88,7 +84,7 @@
         </div>
 
         <div class="equipos-grid" id="equiposGrid">
-          <article class="eq-card" data-category="sobremesa estaticos" data-name="Cubiscan 25" data-featured="1">
+          <article class="eq-card" data-category="sobremesa estaticos" data-name="Cubiscan 25" data-featured="1" data-video="https://youtu.be/xYs_lNpIypE">
             <span class="eq-card__badge eq-card__badge--orange">Compacto</span>
             <div class="eq-card__media eq-card__gallery" data-gallery>
               <img class="is-active" src="assets/marcas/cubiscan/cubiscan25/cs25-1.png" alt="Cubiscan 25" loading="lazy" />
@@ -108,11 +104,16 @@
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg><span>±2 mm</span></div>
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7h8v10H8zM5 10v4M19 10v4"/></svg><span>USB / Serial</span></div>
               </div>
-              <a href="index.html#contacto" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="eq-card__highlights">
+                <li data-i18n="dim.equipos.cs25.f1">Ideal para e-commerce y estaciones de sobremesa</li>
+                <li data-i18n="dim.equipos.cs25.f2">Medición rápida de peso y volumen en un solo paso</li>
+                <li data-i18n="dim.equipos.cs25.f3">Integración sencilla por USB o puerto serial</li>
+              </ul>
+              <button type="button" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </article>
 
-          <article class="eq-card" data-category="estaticos sobremesa" data-name="Cubiscan 100" data-featured="2">
+          <article class="eq-card" data-category="estaticos sobremesa" data-name="Cubiscan 100" data-featured="2" data-datasheet="assets/marcas/cubiscan/cs100/docweb.pdf" data-video="https://youtu.be/pjidb4hdmY4">
             <span class="eq-card__badge eq-card__badge--green">Best seller</span>
             <div class="eq-card__media eq-card__gallery" data-gallery>
               <img class="is-active" src="assets/marcas/cubiscan/cs100/foto1.png" alt="Cubiscan 100" loading="lazy" />
@@ -132,11 +133,16 @@
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg><span>±2 mm</span></div>
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7h8v10H8zM5 10v4M19 10v4"/></svg><span>USB / Ethernet</span></div>
               </div>
-              <a href="assets/marcas/cubiscan/cs100/docweb.pdf" class="eq-card__link" target="_blank" rel="noopener noreferrer"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="eq-card__highlights">
+                <li data-i18n="dim.equipos.cs100.f1">Referencia del mercado en centros de distribución</li>
+                <li data-i18n="dim.equipos.cs100.f2">Alta precisión y repetibilidad en cada medición</li>
+                <li data-i18n="dim.equipos.cs100.f3">Conectividad USB y Ethernet para tu WMS</li>
+              </ul>
+              <button type="button" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </article>
 
-          <article class="eq-card" data-category="estaticos sobremesa industriales" data-name="Cubiscan 200 SQ" data-featured="3">
+          <article class="eq-card" data-category="estaticos sobremesa industriales" data-name="Cubiscan 200 SQ" data-featured="3" data-video="https://www.youtube.com/user/CubiScanMontra">
             <span class="eq-card__badge eq-card__badge--blue">Industrial</span>
             <div class="eq-card__media eq-card__gallery" data-gallery>
               <img class="is-active" src="assets/marcas/cubiscan/cubiscan%20200sq/cs200-1.png" alt="Cubiscan 200 SQ" loading="lazy" />
@@ -149,7 +155,12 @@
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg><span>±5 mm</span></div>
                 <div class="eq-card__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7h8v10H8zM5 10v4M19 10v4"/></svg><span>USB / Ethernet</span></div>
               </div>
-              <a href="index.html#contacto" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="eq-card__highlights">
+                <li data-i18n="dim.equipos.cs200.f1">Pensado para bultos y paquetes de mayor tamaño</li>
+                <li data-i18n="dim.equipos.cs200.f2">Operación estática confiable en depósitos</li>
+                <li data-i18n="dim.equipos.cs200.f3">Salida de datos hacia sistemas de gestión</li>
+              </ul>
+              <button type="button" class="eq-card__link"><span data-i18n="dim.equipos.details">Ver detalles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </article>
         </div>

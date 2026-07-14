@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavActive();
   initHeroRotate();
   initEquiposCatalog();
+  initEquiposDetail();
 });
 
 /* Header scroll behavior */
@@ -472,5 +473,225 @@ function initEquiposGalleries(root) {
         show(Number(dot.dataset.index) || 0);
       });
     });
+  });
+}
+
+function tEq(key, fallback) {
+  if (window.LogintecI18n?.t) {
+    const value = LogintecI18n.t(key);
+    if (value && value !== key) return value;
+  }
+  return fallback;
+}
+
+function initEquiposDetail() {
+  const grid = document.getElementById('equiposGrid');
+  if (!grid) return;
+
+  let openCard = null;
+  let detail = document.getElementById('eqDetail');
+
+  if (!detail) {
+    detail = document.createElement('div');
+    detail.id = 'eqDetail';
+    detail.className = 'eq-detail';
+    detail.setAttribute('aria-hidden', 'true');
+    detail.innerHTML = `
+      <div class="eq-detail__backdrop" data-eq-close></div>
+      <div class="eq-detail__panel" role="dialog" aria-modal="true" aria-labelledby="eqDetailName">
+        <button type="button" class="eq-detail__close" data-eq-close aria-label="${tEq('dim.equipos.close', 'Cerrar')}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+        </button>
+        <div class="eq-detail__scroll">
+          <div class="eq-detail__layout">
+            <div class="eq-detail__gallery">
+              <div class="eq-detail__main"><img id="eqDetailMainImg" src="" alt="" /></div>
+              <div class="eq-detail__thumbs" id="eqDetailThumbs"></div>
+            </div>
+            <div class="eq-detail__info">
+              <span class="eq-detail__badge" id="eqDetailBadge"></span>
+              <h2 class="eq-detail__name" id="eqDetailName"></h2>
+              <p class="eq-detail__desc" id="eqDetailDesc"></p>
+              <p class="eq-detail__section-title" data-i18n="dim.equipos.specs">${tEq('dim.equipos.specs', 'Especificaciones')}</p>
+              <div class="eq-detail__specs" id="eqDetailSpecs"></div>
+              <p class="eq-detail__section-title" data-i18n="dim.equipos.highlights">${tEq('dim.equipos.highlights', 'Destacados')}</p>
+              <div class="eq-detail__features" id="eqDetailFeatures"></div>
+              <div class="eq-detail__actions">
+                <a class="eq-detail__btn eq-detail__btn--primary" id="eqDetailDatasheet" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
+                  <span data-i18n="dim.equipos.datasheet">${tEq('dim.equipos.datasheet', 'Ficha técnica')}</span>
+                </a>
+                <a class="eq-detail__btn eq-detail__btn--ghost" id="eqDetailVideo" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"/></svg>
+                  <span data-i18n="dim.equipos.video">${tEq('dim.equipos.video', 'Ver video')}</span>
+                </a>
+                <a class="eq-detail__btn eq-detail__btn--ghost" id="eqDetailConsult" href="index.html#contacto">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg>
+                  <span data-i18n="dim.equipos.consult">${tEq('dim.equipos.consult', 'Consultar')}</span>
+                </a>
+              </div>
+              <p class="eq-detail__note" data-i18n="dim.equipos.detailNote">${tEq('dim.equipos.detailNote', '¿Necesitás cotización, demo o integración con tu WMS? Escribinos y te asesoramos.')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(detail);
+  }
+
+  const els = {
+    badge: detail.querySelector('#eqDetailBadge'),
+    name: detail.querySelector('#eqDetailName'),
+    desc: detail.querySelector('#eqDetailDesc'),
+    specs: detail.querySelector('#eqDetailSpecs'),
+    features: detail.querySelector('#eqDetailFeatures'),
+    mainImg: detail.querySelector('#eqDetailMainImg'),
+    thumbs: detail.querySelector('#eqDetailThumbs'),
+    datasheet: detail.querySelector('#eqDetailDatasheet'),
+    video: detail.querySelector('#eqDetailVideo'),
+    consult: detail.querySelector('#eqDetailConsult'),
+    closeBtn: detail.querySelector('.eq-detail__close'),
+  };
+
+  const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+  const setMainImage = (src, alt) => {
+    els.mainImg.src = src;
+    els.mainImg.alt = alt || '';
+  };
+
+  const fillFromCard = (card) => {
+    const name = card.querySelector('.eq-card__name')?.textContent?.trim() || card.dataset.name || '';
+    const desc = card.querySelector('.eq-card__text')?.textContent?.trim() || '';
+    const badge = card.querySelector('.eq-card__badge');
+    const images = Array.from(card.querySelectorAll('.eq-card__media img'));
+    const specs = Array.from(card.querySelectorAll('.eq-card__spec'));
+    const highlightItems = Array.from(card.querySelectorAll('.eq-card__highlights li'));
+    const datasheet = card.dataset.datasheet || '';
+    const video = card.dataset.video || '';
+
+    els.name.textContent = name;
+    els.desc.textContent = desc;
+
+    if (badge) {
+      els.badge.hidden = false;
+      els.badge.textContent = badge.textContent.trim();
+      els.badge.className = 'eq-detail__badge';
+      const tone = [...badge.classList].find((c) => c.startsWith('eq-card__badge--'));
+      if (tone) els.badge.classList.add(tone.replace('eq-card__badge', 'eq-detail__badge'));
+    } else {
+      els.badge.hidden = true;
+    }
+
+    els.specs.innerHTML = '';
+    specs.forEach((spec) => {
+      const clone = spec.cloneNode(true);
+      clone.className = 'eq-detail__spec';
+      els.specs.appendChild(clone);
+    });
+
+    els.features.innerHTML = '';
+    const featureSection = detail.querySelector('[data-i18n="dim.equipos.highlights"]');
+    if (highlightItems.length) {
+      featureSection?.classList.remove('is-hidden');
+      els.features.hidden = false;
+      highlightItems.forEach((item) => {
+        const row = document.createElement('div');
+        row.className = 'eq-detail__feature';
+        row.innerHTML = `${checkIcon}<span></span>`;
+        row.querySelector('span').textContent = item.textContent.trim();
+        els.features.appendChild(row);
+      });
+    } else {
+      featureSection?.classList.add('is-hidden');
+      els.features.hidden = true;
+    }
+
+    els.thumbs.innerHTML = '';
+    const alt = name;
+    if (images.length) {
+      setMainImage(images[0].currentSrc || images[0].src, alt);
+      images.forEach((img, index) => {
+        const src = img.currentSrc || img.src;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `eq-detail__thumb${index === 0 ? ' is-active' : ''}`;
+        btn.setAttribute('aria-label', `${alt} ${index + 1}`);
+        btn.innerHTML = `<img src="${src}" alt="" />`;
+        btn.addEventListener('click', () => {
+          setMainImage(src, alt);
+          els.thumbs.querySelectorAll('.eq-detail__thumb').forEach((t) => t.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+        els.thumbs.appendChild(btn);
+      });
+      els.thumbs.hidden = images.length < 2;
+    }
+
+    if (datasheet) {
+      els.datasheet.href = datasheet;
+      els.datasheet.classList.remove('is-hidden');
+    } else {
+      els.datasheet.removeAttribute('href');
+      els.datasheet.classList.add('is-hidden');
+    }
+
+    if (video) {
+      els.video.href = video;
+      els.video.classList.remove('is-hidden');
+      const videoLabel = els.video.querySelector('span');
+      if (videoLabel) {
+        videoLabel.setAttribute('data-i18n', 'dim.equipos.video');
+        videoLabel.textContent = tEq('dim.equipos.video', 'Ver video');
+      }
+    } else {
+      els.video.href = 'index.html#contacto';
+      els.video.classList.remove('is-hidden');
+      const videoLabel = els.video.querySelector('span');
+      if (videoLabel) {
+        videoLabel.setAttribute('data-i18n', 'dim.equipos.requestVideo');
+        videoLabel.textContent = tEq('dim.equipos.requestVideo', 'Solicitar video');
+      }
+    }
+
+    els.consult.href = card.dataset.consult || 'index.html#contacto';
+  };
+
+  const open = (card) => {
+    openCard = card;
+    fillFromCard(card);
+    detail.classList.add('is-open');
+    detail.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('eq-detail-open');
+    els.closeBtn?.focus();
+  };
+
+  const close = () => {
+    detail.classList.remove('is-open');
+    detail.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('eq-detail-open');
+    openCard = null;
+  };
+
+  grid.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.eq-card__link');
+    if (!trigger) return;
+    const card = trigger.closest('.eq-card');
+    if (!card) return;
+    e.preventDefault();
+    open(card);
+  });
+
+  detail.addEventListener('click', (e) => {
+    if (e.target.closest('[data-eq-close]')) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && detail.classList.contains('is-open')) close();
+  });
+
+  document.addEventListener('languagechange', () => {
+    if (openCard && detail.classList.contains('is-open')) fillFromCard(openCard);
+    if (els.closeBtn) els.closeBtn.setAttribute('aria-label', tEq('dim.equipos.close', 'Cerrar'));
   });
 }
