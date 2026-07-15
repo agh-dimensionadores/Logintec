@@ -2927,6 +2927,48 @@ a.contact-item:hover {
   filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
 }
 
+#agh .dim-brand__layout {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+#agh .dim-brand__visual {
+  min-height: 520px;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#agh .dim-brand__product {
+  max-height: min(820px, 90vh);
+  height: auto;
+  transform: scale(1.9);
+  transform-origin: center center;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+}
+
+#agh .dim-brand__floats {
+  position: static;
+  top: auto;
+  right: auto;
+  transform: none;
+  gap: 16px;
+  flex-shrink: 0;
+  align-self: center;
+  z-index: 3;
+}
+
+#agh .dim-brand__float-card {
+  min-width: 180px;
+  max-width: 200px;
+  padding: 14px 16px;
+}
+
 #conlida .dim-brand__visual {
   overflow: visible;
 }
@@ -4128,6 +4170,11 @@ body.eq-detail-open {
     max-height: calc(100svh - var(--header-height) - 120px);
   }
 
+  #agh .dim-brand__product {
+    max-height: calc(100svh - var(--header-height) - 20px);
+    transform: scale(1.75);
+  }
+
   .dim-brand__product--conlida {
     max-height: calc(100svh - var(--header-height) - 24px);
     transform: scale(1.5);
@@ -4233,6 +4280,20 @@ body.eq-detail-open {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
+  }
+
+  #agh .dim-brand__visual {
+    flex-direction: column;
+    min-height: auto;
+    gap: 16px;
+  }
+
+  #agh .dim-brand__product {
+    transform: scale(1.55);
+  }
+
+  #agh .dim-brand__floats {
+    margin-top: 0;
   }
 
   .dim-brand__features {

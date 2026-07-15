@@ -412,7 +412,6 @@ function initEquiposCatalog() {
   if (!grid || !filters) return;
 
   const tabs = filters.querySelectorAll('.equipos-filters__tab');
-  const sortSelect = document.getElementById('equiposSort');
   let activeFilter = 'all';
 
   const getCards = () => Array.from(grid.querySelectorAll('.eq-card'));
@@ -423,18 +422,6 @@ function initEquiposCatalog() {
       const match = activeFilter === 'all' || cats.includes(activeFilter);
       card.classList.toggle('is-hidden', !match);
     });
-  };
-
-  const applySort = () => {
-    const mode = sortSelect?.value || 'featured';
-    const cards = getCards();
-    cards.sort((a, b) => {
-      if (mode === 'name') {
-        return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
-      }
-      return Number(a.dataset.featured || 99) - Number(b.dataset.featured || 99);
-    });
-    cards.forEach((card) => grid.appendChild(card));
   };
 
   tabs.forEach((tab) => {
@@ -449,8 +436,6 @@ function initEquiposCatalog() {
     });
   });
 
-  sortSelect?.addEventListener('change', applySort);
-  applySort();
   applyFilter();
   initEquiposGalleries(grid);
 }
@@ -477,11 +462,18 @@ function initEquiposGalleries(root) {
 }
 
 function tEq(key, fallback) {
-  if (window.LogintecI18n?.t) {
+  if (typeof LogintecI18n !== 'undefined' && LogintecI18n.t) {
     const value = LogintecI18n.t(key);
     if (value && value !== key) return value;
   }
   return fallback;
+}
+
+function getEquiposLang() {
+  if (typeof LogintecI18n !== 'undefined' && LogintecI18n.getLang) {
+    return LogintecI18n.getLang();
+  }
+  return document.documentElement.lang || 'es';
 }
 
 function initEquiposDetail() {
@@ -521,6 +513,10 @@ function initEquiposDetail() {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
                   <span data-i18n="dim.equipos.datasheet">${tEq('dim.equipos.datasheet', 'Ficha técnica')}</span>
                 </a>
+                <a class="eq-detail__btn eq-detail__btn--ghost" id="eqDetailBrochure" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  <span data-i18n="dim.equipos.viewBrochure">${tEq('dim.equipos.viewBrochure', 'Ver folleto')}</span>
+                </a>
                 <a class="eq-detail__btn eq-detail__btn--ghost" id="eqDetailVideo" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"/></svg>
                   <span data-i18n="dim.equipos.video">${tEq('dim.equipos.video', 'Ver video')}</span>
@@ -548,6 +544,7 @@ function initEquiposDetail() {
     mainImg: detail.querySelector('#eqDetailMainImg'),
     thumbs: detail.querySelector('#eqDetailThumbs'),
     datasheet: detail.querySelector('#eqDetailDatasheet'),
+    brochure: detail.querySelector('#eqDetailBrochure'),
     video: detail.querySelector('#eqDetailVideo'),
     consult: detail.querySelector('#eqDetailConsult'),
     closeBtn: detail.querySelector('.eq-detail__close'),
@@ -567,7 +564,9 @@ function initEquiposDetail() {
     const images = Array.from(card.querySelectorAll('.eq-card__media img'));
     const specs = Array.from(card.querySelectorAll('.eq-card__spec'));
     const highlightItems = Array.from(card.querySelectorAll('.eq-card__highlights li'));
-    const datasheet = card.dataset.datasheet || '';
+    const lang = getEquiposLang() === 'en' ? 'en' : 'es';
+    const datasheet = card.getAttribute(`data-datasheet-${lang}`) || '';
+    const brochure = card.getAttribute(`data-brochure-${lang}`) || '';
     const video = card.dataset.video || '';
 
     els.name.textContent = name;
@@ -634,6 +633,14 @@ function initEquiposDetail() {
     } else {
       els.datasheet.removeAttribute('href');
       els.datasheet.classList.add('is-hidden');
+    }
+
+    if (brochure) {
+      els.brochure.href = brochure;
+      els.brochure.classList.remove('is-hidden');
+    } else {
+      els.brochure.removeAttribute('href');
+      els.brochure.classList.add('is-hidden');
     }
 
     if (video) {
