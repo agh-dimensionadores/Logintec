@@ -66,6 +66,9 @@ const LogintecI18n = (() => {
       'cubiscan.label': 'Cubiscan Partner',
       'cubiscan.title': '<span class="t-bold">Sistemas de</span> <span class="t-accent">dimensionamiento</span> y pesaje',
       'cubiscan.desc': 'Equipos diseñados para aumentar la productividad de su centro de distribución, depósito y operación logística.',
+      'cubiscan.hl1': 'Mediciones exactas de peso y dimensiones',
+      'cubiscan.hl2': 'Integración total con WMS, TMS y ERP',
+      'cubiscan.hl3': 'Mayor ROI y eficiencia operativa',
 
       'dim.length': 'Largo',
       'dim.width': 'Ancho',
@@ -82,11 +85,11 @@ const LogintecI18n = (() => {
       'product.1200.desc': 'Gran volumen',
 
       'benefit.precision.title': 'Precisión',
-      'benefit.precision.desc': 'Mediciones exactas de peso y dimensiones en segundos',
+      'benefit.precision.desc': 'Mediciones exactas de peso y dimensiones en segundos.',
       'benefit.integration.title': 'Integración',
-      'benefit.integration.desc': 'Compatible con WMS, TMS y sistemas ERP',
+      'benefit.integration.desc': 'Compatible con WMS, TMS y sistemas ERP.',
       'benefit.roi.title': 'ROI',
-      'benefit.roi.desc': 'Reducción de errores de facturación y optimización de espacio',
+      'benefit.roi.desc': 'Reducción de errores de facturación y optimización de espacio.',
 
       'cubiscan.demo': 'Solicitar demostración',
 
@@ -217,7 +220,7 @@ const LogintecI18n = (() => {
       'dim.agh.f4.desc': 'Compatibles con WMS, TMS y ERP para una logística conectada',
       'dim.agh.float1.title': 'Tecnología láser 3D',
       'dim.agh.float1.desc': 'Precisión milimétrica',
-      'dim.agh.float2.title': 'Fabricación alemana',
+      'dim.agh.float2.title': 'Fabricación argentina',
       'dim.agh.float2.desc': 'Calidad y confiabilidad garantizada',
       'dim.cubiscan.label': 'Líder mundial en dimensionamiento',
       'dim.cubiscan.headline': 'Medición que optimiza <span class="t-accent">cada envío y pallet</span>',
@@ -437,6 +440,9 @@ const LogintecI18n = (() => {
       'cubiscan.label': 'Cubiscan Partner',
       'cubiscan.title': '<span class="t-bold">Dimensioning</span> <span class="t-accent">and weighing</span> systems',
       'cubiscan.desc': 'Equipment designed to increase productivity in your distribution center, warehouse and logistics operation.',
+      'cubiscan.hl1': 'Accurate weight and dimension measurements',
+      'cubiscan.hl2': 'Full integration with WMS, TMS and ERP',
+      'cubiscan.hl3': 'Higher ROI and operational efficiency',
 
       'dim.length': 'Length',
       'dim.width': 'Width',
@@ -453,11 +459,11 @@ const LogintecI18n = (() => {
       'product.1200.desc': 'High volume',
 
       'benefit.precision.title': 'Precision',
-      'benefit.precision.desc': 'Accurate weight and dimension measurements in seconds',
+      'benefit.precision.desc': 'Accurate weight and dimension measurements in seconds.',
       'benefit.integration.title': 'Integration',
-      'benefit.integration.desc': 'Compatible with WMS, TMS and ERP systems',
+      'benefit.integration.desc': 'Compatible with WMS, TMS and ERP systems.',
       'benefit.roi.title': 'ROI',
-      'benefit.roi.desc': 'Reduced billing errors and space optimization',
+      'benefit.roi.desc': 'Reduced billing errors and space optimization.',
 
       'cubiscan.demo': 'Request a demo',
 
@@ -572,7 +578,7 @@ const LogintecI18n = (() => {
       'dim.hero.stat4.title': 'Continuous operation',
       'dim.hero.stat4.desc': 'Equipment designed for high performance',
       'dim.brands.label': 'Brand representatives',
-      'dim.agh.label': 'German high-precision technology',
+      'dim.agh.label': 'Argentine high-precision technology',
       'dim.agh.headline': 'Measurement that drives <span class="t-accent">efficiency and precision</span>',
       'dim.agh.title': 'AGH',
       'dim.agh.desc': 'Latest generation laser technology with robust design for demanding industrial environments. Exact volume, weight and dimension measurements in seconds.',
@@ -588,7 +594,7 @@ const LogintecI18n = (() => {
       'dim.agh.f4.desc': 'Compatible with WMS, TMS and ERP for connected logistics',
       'dim.agh.float1.title': '3D laser technology',
       'dim.agh.float1.desc': 'Millimeter precision',
-      'dim.agh.float2.title': 'German manufacturing',
+      'dim.agh.float2.title': 'Argentine manufacturing',
       'dim.agh.float2.desc': 'Guaranteed quality and reliability',
       'dim.cubiscan.label': 'World leader in dimensioning',
       'dim.cubiscan.headline': 'Measurement that optimizes <span class="t-accent">every shipment and pallet</span>',

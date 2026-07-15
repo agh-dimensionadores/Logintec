@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initWelcomeStatsReveal();
   initDimensionadoresReveal();
-  initProductCards();
   initContactForm();
   initSmoothAnchors();
   initNavActive();
@@ -223,52 +222,6 @@ function initDimHeroCounters() {
   );
 
   nums.forEach((num) => observer.observe(num));
-}
-
-/* Cubiscan product card interaction */
-function initProductCards() {
-  const cards = document.querySelectorAll('.product-card');
-  const dataRows = document.querySelectorAll('.data-row strong');
-
-  const specs = {
-    'Cubiscan 25': ['25.0 cm', '18.5 cm', '12.0 cm', '2.1 kg'],
-    'Cubiscan 100': ['38.4 cm', '28.2 cm', '22.5 cm', '8.7 kg'],
-    'Cubiscan 325': ['45.2 cm', '32.8 cm', '28.1 cm', '12.4 kg'],
-    'Cubiscan 150': ['52.0 cm', '40.1 cm', '35.6 cm', '18.2 kg'],
-    'Cubiscan 200TS': ['68.5 cm', '48.3 cm', '42.0 cm', '25.8 kg'],
-    'Cubiscan 1200': ['120.0 cm', '80.5 cm', '72.3 cm', '85.0 kg'],
-  };
-
-  cards.forEach((card) => {
-    card.addEventListener('click', () => {
-      cards.forEach((c) => c.classList.remove('product-card--active'));
-      card.classList.add('product-card--active');
-
-      const model = card.querySelector('.product-card__model')?.textContent;
-      const screenLabel = document.querySelector('.device-screen__label');
-      if (model && specs[model] && dataRows.length >= 4) {
-        specs[model].forEach((val, i) => {
-          dataRows[i].textContent = val;
-        });
-        if (screenLabel) screenLabel.textContent = model;
-      }
-    });
-  });
-
-  // Animate data values on load
-  animateDeviceData();
-}
-
-function animateDeviceData() {
-  const highlight = document.querySelector('.data-row--highlight strong');
-  if (!highlight) return;
-
-  setInterval(() => {
-    highlight.style.transform = 'scale(1.05)';
-    setTimeout(() => {
-      highlight.style.transform = 'scale(1)';
-    }, 200);
-  }, 3000);
 }
 
 /* Contact form */

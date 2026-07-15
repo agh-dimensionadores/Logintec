@@ -315,73 +315,77 @@
 
     <!-- Cubiscan -->
     <section class="section section--cubiscan" id="cubiscan">
-      <div class="container">
-        <div class="section__header section__header--light reveal">
-          <span class="section__label section__label--accent" data-i18n="cubiscan.label">Cubiscan Partner</span>
-          <h2 data-i18n-html="cubiscan.title"><span class="t-bold">Sistemas de</span> <span class="t-accent">dimensionamiento</span> y pesaje</h2>
-          <p data-i18n="cubiscan.desc">Equipos diseñados para aumentar la productividad de su centro de distribución, depósito y operación logística.</p>
-        </div>
-        <div class="cubiscan-showcase">
+      <div class="cubiscan-top">
+        <div class="container cubiscan-layout">
+          <div class="cubiscan-copy reveal">
+            <span class="cubiscan-label" data-i18n="cubiscan.label">Cubiscan Partner</span>
+            <h2 class="cubiscan-title" data-i18n-html="cubiscan.title"><span class="t-bold">Sistemas de</span> <span class="t-accent">dimensionamiento</span> y pesaje</h2>
+            <p class="cubiscan-desc" data-i18n="cubiscan.desc">Equipos diseñados para aumentar la productividad de su centro de distribución, depósito y operación logística.</p>
+            <ul class="cubiscan-highlights">
+              <li>
+                <span class="cubiscan-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+                </span>
+                <span data-i18n="cubiscan.hl1">Mediciones exactas de peso y dimensiones</span>
+              </li>
+              <li>
+                <span class="cubiscan-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 4H6a2 2 0 00-2 2v4m12-6h4a2 2 0 012 2v4M4 14v4a2 2 0 002 2h4m6 0h4a2 2 0 002-2v-4" stroke-linecap="round"/><path d="M9 12h6" stroke-linecap="round"/></svg>
+                </span>
+                <span data-i18n="cubiscan.hl2">Integración total con WMS, TMS y ERP</span>
+              </li>
+              <li>
+                <span class="cubiscan-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V10M10 19V5M16 19v-8M20 19H3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8l3-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span data-i18n="cubiscan.hl3">Mayor ROI y eficiencia operativa</span>
+              </li>
+            </ul>
+          </div>
           <div class="cubiscan-visual reveal">
-            <div class="cubiscan-visual__frame">
-              <div class="cubiscan-visual__device">
-                <div class="device-screen">
-                  <div class="device-screen__bar"></div>
-                  <div class="device-screen__label">Cubiscan 325</div>
-                  <div class="device-screen__data">
-                    <div class="data-row"><span data-i18n="dim.length">Largo</span><strong>45.2 cm</strong></div>
-                    <div class="data-row"><span data-i18n="dim.width">Ancho</span><strong>32.8 cm</strong></div>
-                    <div class="data-row"><span data-i18n="dim.height">Alto</span><strong>28.1 cm</strong></div>
-                    <div class="data-row data-row--highlight"><span data-i18n="dim.weight">Peso</span><strong>12.4 kg</strong></div>
-                  </div>
-                </div>
-                <div class="device-base"></div>
-              </div>
+            <img
+              class="cubiscan-visual__img"
+              src="assets/extras/fondomaquinas.png"
+              alt="Equipos Cubiscan de dimensionamiento y pesaje"
+              width="1200"
+              height="700"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="cubiscan-bridge">
+        <div class="container">
+          <div class="cubiscan-panel reveal">
+            <div class="cubiscan-panel__item">
+              <span class="cubiscan-panel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+              </span>
+              <strong data-i18n="benefit.precision.title">Precisión</strong>
+              <p data-i18n="benefit.precision.desc">Mediciones exactas de peso y dimensiones en segundos.</p>
+            </div>
+            <div class="cubiscan-panel__item">
+              <span class="cubiscan-panel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 4H6a2 2 0 00-2 2v4m12-6h4a2 2 0 012 2v4M4 14v4a2 2 0 002 2h4m6 0h4a2 2 0 002-2v-4" stroke-linecap="round"/><path d="M9 12h6" stroke-linecap="round"/></svg>
+              </span>
+              <strong data-i18n="benefit.integration.title">Integración</strong>
+              <p data-i18n="benefit.integration.desc">Compatible con WMS, TMS y sistemas ERP.</p>
+            </div>
+            <div class="cubiscan-panel__item">
+              <span class="cubiscan-panel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V10M10 19V5M16 19v-8M20 19H3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8l3-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <strong data-i18n="benefit.roi.title">ROI</strong>
+              <p data-i18n="benefit.roi.desc">Reducción de errores de facturación y optimización de espacio.</p>
             </div>
           </div>
-          <div class="cubiscan-products reveal">
-            <div class="product-grid">
-              <div class="product-card">
-                <span class="product-card__model">Cubiscan 25</span>
-                <span class="product-card__desc" data-i18n="product.25.desc">Compacto y preciso</span>
-              </div>
-              <div class="product-card">
-                <span class="product-card__model">Cubiscan 100</span>
-                <span class="product-card__desc" data-i18n="product.100.desc">Alto rendimiento</span>
-              </div>
-              <div class="product-card product-card--active">
-                <span class="product-card__model">Cubiscan 325</span>
-                <span class="product-card__desc" data-i18n="product.325.desc">Industrial</span>
-              </div>
-              <div class="product-card">
-                <span class="product-card__model">Cubiscan 150</span>
-                <span class="product-card__desc" data-i18n="product.150.desc">Versátil</span>
-              </div>
-              <div class="product-card">
-                <span class="product-card__model">Cubiscan 200TS</span>
-                <span class="product-card__desc" data-i18n="product.200ts.desc">Transporte</span>
-              </div>
-              <div class="product-card">
-                <span class="product-card__model">Cubiscan 1200</span>
-                <span class="product-card__desc" data-i18n="product.1200.desc">Gran volumen</span>
-              </div>
-            </div>
-            <div class="cubiscan-benefits">
-              <div class="benefit">
-                <strong data-i18n="benefit.precision.title">Precisión</strong>
-                <p data-i18n="benefit.precision.desc">Mediciones exactas de peso y dimensiones en segundos</p>
-              </div>
-              <div class="benefit">
-                <strong data-i18n="benefit.integration.title">Integración</strong>
-                <p data-i18n="benefit.integration.desc">Compatible con WMS, TMS y sistemas ERP</p>
-              </div>
-              <div class="benefit">
-                <strong data-i18n="benefit.roi.title">ROI</strong>
-                <p data-i18n="benefit.roi.desc">Reducción de errores de facturación y optimización de espacio</p>
-              </div>
-            </div>
-            <a href="#contacto" class="btn btn--accent btn--large" data-i18n="cubiscan.demo">Solicitar demostración</a>
-          </div>
+        </div>
+      </div>
+
+      <div class="cubiscan-bottom">
+        <div class="container cubiscan-bottom__inner">
+          <a href="#contacto" class="btn btn--accent btn--large cubiscan-cta" data-i18n="cubiscan.demo">Solicitar demostración</a>
         </div>
       </div>
     </section>
@@ -540,8 +544,7 @@
     <div class="footer__bottom">
       <div class="container">
         <p data-i18n="footer.rights">&copy; 2026 Logintec. Todos los derechos reservados.</p>
-        <a href="https://www.youtube.com/user/CubiScanMontra" target="_blank" rel="noopener noreferrer" class="footer__social">YouTube Cubiscan</a>
-      </div>
+</div>
     </div>
   </footer>
 
