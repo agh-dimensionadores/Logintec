@@ -429,43 +429,40 @@ ul { list-style: none; }
   display: block;
 }
 
-.hero__media--left img {
-  object-position: 40% 52%;
-}
-
+.hero__media--left img,
 .hero__media--right img {
-  object-position: 88% center;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero__media--left {
-  left: -4%;
-  top: 24%;
-  width: min(42vw, 520px);
-  height: min(68vh, 640px);
+  left: -2%;
+  top: 18%;
+  width: min(48vw, 620px);
+  height: min(72vh, 680px);
+  overflow: visible;
   transform: rotate(-2deg);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
   animation: heroSlideLeft 1s var(--ease) 0.1s both;
 }
 
 .hero__media--right {
-  right: -5%;
-  bottom: 14%;
-  width: min(40vw, 480px);
-  height: min(52vh, 500px);
+  right: -2%;
+  bottom: 12%;
+  width: min(42vw, 520px);
+  height: min(62vh, 560px);
+  overflow: visible;
   transform: rotate(3deg);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
   animation: heroSlideRight 1s var(--ease) 0.2s both;
 }
 
 .hero__media--left::after,
 .hero__media--right::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(to bottom, transparent 50%, rgba(58, 15, 31, 0.25));
+  display: none;
+}
+
+.hero__media--left .hero__media-tag,
+.hero__media--right .hero__media-tag {
+  display: none;
 }
 
 .hero__media-tag {
@@ -662,7 +659,10 @@ ul { list-style: none; }
 .section__header--light p { color: rgba(255,255,255,0.72); }
 
 /* ── LOGISTICS ── */
-.section--logistics { background: var(--cream); }
+.section--logistics {
+  background: var(--cream);
+  padding-top: 40px;
+}
 
 .services-grid {
   display: grid;
@@ -1430,7 +1430,7 @@ a.contact-item:hover {
 /* ── WELCOME ── */
 .section--welcome {
   background: var(--cream);
-  padding: 72px 0 80px;
+  padding: 72px 0 40px;
 }
 
 .welcome-split {
@@ -1625,7 +1625,7 @@ a.contact-item:hover {
 
 .welcome-cards-wide {
   width: min(calc(100% - 24px), var(--container-wide));
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
 .welcome-cards {
@@ -4566,7 +4566,7 @@ body.eq-detail-open {
 /* ── RESPONSIVE ── */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .section--welcome {
-    padding: 48px 0 72px;
+    padding: 48px 0 40px;
   }
 
   .welcome-split {
@@ -4750,19 +4750,19 @@ body.eq-detail-open {
   }
 
   .hero__media--left {
-    left: -12%;
-    top: 17%;
-    width: min(38vw, 520px);
-    height: min(70vh, 600px);
+    left: -8%;
+    top: 14%;
+    width: min(44vw, 580px);
+    height: min(72vh, 640px);
     transform: rotate(-2deg);
   }
 
   .hero__media--right {
-    right: -12%;
+    right: -8%;
     bottom: 10%;
     top: auto;
-    width: min(38vw, 500px);
-    height: min(58vh, 520px);
+    width: min(38vw, 480px);
+    height: min(60vh, 520px);
     transform: rotate(3deg);
   }
 
