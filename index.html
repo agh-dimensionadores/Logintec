@@ -107,13 +107,13 @@
     <!-- Bienvenida -->
     <section class="section section--welcome" id="bienvenida">
       <div class="container">
-        <div class="welcome-split reveal">
+        <div class="welcome-split" data-anim-group>
           <div class="welcome-intro">
-            <span class="welcome-intro__line" aria-hidden="true"></span>
-            <h2 class="welcome-intro__title" data-i18n-html="welcome.title"><span class="t-bold">Hola y </span><span class="t-accent">bienvenidos!</span></h2>
-            <p class="welcome-intro__text" data-i18n="welcome.p1">Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), Repuestos críticos y Soluciones de Valor Agregado (VAS), tales como fullfilment, reflashing, screening y distribución.</p>
-            <p class="welcome-intro__text" data-i18n="welcome.p2">De todas formas, el fuerte de Logintec se basa en su capacidad de implementar soluciones que se adecuen a las necesidades de los clientes en término de costos y niveles de servicio.</p>
-            <a href="empresa.html" class="hero-pill-btn welcome-intro__btn">
+            <span class="welcome-intro__line anim-in anim-in--left" aria-hidden="true"></span>
+            <h2 class="welcome-intro__title anim-in anim-in--up" data-i18n-html="welcome.title"><span class="t-bold">Hola y </span><span class="t-accent">bienvenidos!</span></h2>
+            <p class="welcome-intro__text anim-in anim-in--up" data-i18n="welcome.p1">Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), Repuestos críticos y Soluciones de Valor Agregado (VAS), tales como fullfilment, reflashing, screening y distribución.</p>
+            <p class="welcome-intro__text anim-in anim-in--up" data-i18n="welcome.p2">De todas formas, el fuerte de Logintec se basa en su capacidad de implementar soluciones que se adecuen a las necesidades de los clientes en término de costos y niveles de servicio.</p>
+            <a href="empresa.html" class="hero-pill-btn welcome-intro__btn anim-in anim-in--pop">
               <span data-i18n="welcome.cta">Conocé más de nosotros</span>
               <span class="hero-pill-btn__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -122,9 +122,9 @@
           </div>
 
           <div class="welcome-services-panel">
-            <span class="welcome-services-panel__label" data-i18n="welcome.services.label">Nuestros servicios</span>
+            <span class="welcome-services-panel__label anim-in anim-in--right" data-i18n="welcome.services.label">Nuestros servicios</span>
             <div class="welcome-services-panel__grid">
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--left">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
                 </div>
@@ -133,7 +133,7 @@
                   <p data-i18n="welcome.svc1.desc">Servicios de entregas en CABA y AMBA en 2 horas.</p>
                 </div>
               </div>
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--right">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 </div>
@@ -142,7 +142,7 @@
                   <p data-i18n="welcome.svc2.desc">Realizamos todos los trámites para que sus productos ingresen al país.</p>
                 </div>
               </div>
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--left">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                 </div>
@@ -151,7 +151,7 @@
                   <p data-i18n="welcome.svc3.desc">Entregamos en las capitales del interior, embarcando en el primer vuelo disponible.</p>
                 </div>
               </div>
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--right">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
                 </div>
@@ -160,7 +160,7 @@
                   <p data-i18n="welcome.svc4.desc">Enviamos sus productos al país de origen para realizar las reparaciones.</p>
                 </div>
               </div>
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--left">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                 </div>
@@ -169,7 +169,7 @@
                   <p data-i18n="welcome.svc5.desc">Contamos con un centro de almacenaje para sus productos tecnológicos.</p>
                 </div>
               </div>
-              <div class="welcome-svc-item">
+              <div class="welcome-svc-item anim-in anim-in--right">
                 <div class="welcome-svc-item__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 17h8M8 11h8M6 3h12l2 7H4l2-7z"/></svg>
                 </div>
@@ -182,8 +182,8 @@
           </div>
         </div>
 
-        <div class="welcome-stats">
-          <div class="welcome-stat reveal-stat">
+        <div class="welcome-stats" data-anim-group>
+          <div class="welcome-stat anim-in anim-in--pop">
             <div class="welcome-stat__icon welcome-stat__icon--burgundy">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
             </div>
@@ -192,7 +192,7 @@
               <span data-i18n="welcome.stat1.desc">de experiencia en logística crítica</span>
             </div>
           </div>
-          <div class="welcome-stat reveal-stat">
+          <div class="welcome-stat anim-in anim-in--pop">
             <div class="welcome-stat__icon welcome-stat__icon--green">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
@@ -201,7 +201,7 @@
               <span data-i18n="welcome.stat2.desc">operación continua sin interrupciones</span>
             </div>
           </div>
-          <div class="welcome-stat reveal-stat">
+          <div class="welcome-stat anim-in anim-in--pop">
             <div class="welcome-stat__icon welcome-stat__icon--burgundy">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
@@ -210,7 +210,7 @@
               <span data-i18n="welcome.stat3.desc">cobertura nacional en entregas</span>
             </div>
           </div>
-          <div class="welcome-stat reveal-stat">
+          <div class="welcome-stat anim-in anim-in--pop">
             <div class="welcome-stat__icon welcome-stat__icon--green">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 17h8M8 11h8M6 3h12l2 7H4l2-7zM6 3L4 21h16l-2-18"/></svg>
             </div>
@@ -222,9 +222,9 @@
         </div>
       </div>
 
-      <div class="welcome-cards-wide">
-        <div class="welcome-cards reveal">
-          <a href="#logistica" class="welcome-card welcome-card--logistics">
+      <div class="welcome-cards-wide" data-anim-group>
+        <div class="welcome-cards">
+          <a href="#logistica" class="welcome-card welcome-card--logistics anim-in anim-in--left anim-in--scale">
             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" />
             <div class="welcome-card__overlay"></div>
             <div class="welcome-card__content">
@@ -237,7 +237,7 @@
               </span>
             </div>
           </a>
-          <a href="dimensionadores.html" class="welcome-card welcome-card--cubiscan">
+          <a href="dimensionadores.html" class="welcome-card welcome-card--cubiscan anim-in anim-in--right anim-in--scale">
             <img src="assets/extras/dimensionadores.png" alt="" loading="lazy" />
             <div class="welcome-card__overlay"></div>
             <div class="welcome-card__content">
@@ -256,13 +256,13 @@
     <!-- Logística -->
     <section class="section section--logistics" id="logistica">
       <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label" data-i18n="logistics.label">Nuestros servicios</span>
-          <h2 data-i18n-html="logistics.title"><span class="t-bold">Logística</span> <span class="t-accent">de partes críticas</span></h2>
-          <p data-i18n="logistics.desc">Diseñamos, gestionamos e implementamos soluciones logísticas de valor agregado para industrias que no pueden detenerse.</p>
+        <div class="section__header" data-anim-group>
+          <span class="section__label anim-in anim-in--up" data-i18n="logistics.label">Nuestros servicios</span>
+          <h2 class="anim-in anim-in--up" data-i18n-html="logistics.title"><span class="t-bold">Logística</span> <span class="t-accent">de partes críticas</span></h2>
+          <p class="anim-in anim-in--up" data-i18n="logistics.desc">Diseñamos, gestionamos e implementamos soluciones logísticas de valor agregado para industrias que no pueden detenerse.</p>
         </div>
-        <div class="services-grid">
-          <article class="service-card service-card--featured reveal">
+        <div class="services-grid" data-anim-group>
+          <article class="service-card service-card--featured anim-in anim-in--left anim-in--scale">
             <div class="service-card__number">01</div>
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -275,15 +275,31 @@
               <li>NBD</li>
             </ul>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card service-card--ior anim-in anim-in--up anim-in--scale" tabindex="0">
             <div class="service-card__number">02</div>
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>Importer & Exporter of Record</h3>
             <p data-i18n="service.ior.desc">IOR y EOR para clientes internacionales. Gestionamos toda la documentación para que sus productos ingresen al país sin demoras.</p>
+            <span class="service-card__more" data-i18n="service.ior.more">Más info</span>
+            <div class="service-card__detail" role="tooltip">
+              <div class="service-card__detail-inner">
+                <strong class="service-card__detail-title">Importer &amp; Exporter of Record</strong>
+                <p data-i18n="service.ior.detail.p1">Hemos desarrollado los servicios de IOR &amp; EOR para atender las necesidades de nuestros clientes internacionales.</p>
+                <p data-i18n="service.ior.detail.p2">En la mayoría de los países es esencial que su empresa tenga presencia fiscal para poder importar productos; y obtener una licencia de importador/exportador requiere mucho tiempo (varios meses) y mucho dinero. Nuestro servicio asiste a las empresas que no cuentan con dicha presencia corporativa, utilizando nuestra entidad de IOR &amp; EOR.</p>
+                <p data-i18n="service.ior.detail.p3">Logintec ofrece un rápido desarrollo y parametrización para los procesos de importación/exportación de partes y productos críticos; incluyendo:</p>
+                <ul>
+                  <li data-i18n="service.ior.detail.li1">Actuar como el importador/exportador para la aduana y en relación a la declaración de los impuestos a la hora de la importación/exportación;</li>
+                  <li data-i18n="service.ior.detail.li2">Ser la entidad responsable frente a las aduanas, a los impuestos y a otras autoridades reguladoras;</li>
+                  <li data-i18n="service.ior.detail.li3">Solicitar las licencias o permisos para las importaciones/exportaciones;</li>
+                  <li data-i18n="service.ior.detail.li4">Mantener los productos la duración mínima requerida bajo la ley local; y</li>
+                  <li data-i18n="service.ior.detail.li5">Completar todos los formularios regulares asociados al pago de tasas e impuestos.</li>
+                </ul>
+              </div>
+            </div>
           </article>
-          <article class="service-card reveal">
+          <article class="service-card anim-in anim-in--right anim-in--scale">
             <div class="service-card__number">03</div>
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -292,20 +308,20 @@
             <p data-i18n="service.wh.desc">Almacenaje tecnológico, entregas puerta a puerta en todo el país y CrossDocking para reducir tiempos de entrega.</p>
           </article>
         </div>
-        <div class="features-bar reveal">
-          <div class="feature-pill">
+        <div class="features-bar" id="featuresBar" data-anim-group>
+          <div class="feature-pill anim-in anim-in--pop">
             <span class="feature-pill__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
             <span data-i18n="feature.customs">Documentación aduanera</span>
           </div>
-          <div class="feature-pill">
+          <div class="feature-pill anim-in anim-in--pop">
             <span class="feature-pill__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></span>
             <span data-i18n="feature.nfo">Servicio NFO interior</span>
           </div>
-          <div class="feature-pill">
+          <div class="feature-pill anim-in anim-in--pop">
             <span class="feature-pill__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg></span>
             <span data-i18n="feature.return">Retorno de importaciones</span>
           </div>
-          <div class="feature-pill">
+          <div class="feature-pill anim-in anim-in--pop">
             <span class="feature-pill__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 17h8M8 11h8M6 3h12l2 7H4l2-7zM6 3L4 21h16l-2-18"/></svg></span>
             <span data-i18n="feature.network">Red terrestre nacional</span>
           </div>
@@ -383,37 +399,33 @@
         </div>
       </div>
 
-      <div class="cubiscan-bottom">
-        <div class="container cubiscan-bottom__inner">
-          <a href="#contacto" class="btn btn--accent btn--large cubiscan-cta" data-i18n="cubiscan.demo">Solicitar demostración</a>
-        </div>
-      </div>
+      <div class="cubiscan-bottom" aria-hidden="true"></div>
     </section>
 
     <!-- Empresa -->
-    <section class="section section--about" id="empresa">
+    <section class="section section--about" id="empresa" data-anim-section>
       <div class="container about-grid">
-        <div class="about-content reveal">
-          <span class="section__label" data-i18n="about.label">Quiénes somos</span>
-          <h2 data-i18n-html="about.title">Soluciones <span class="t-accent">logísticas</span> a medida</h2>
-          <p data-i18n-html="about.p1"><strong>Logintec</strong> es una empresa dedicada al diseño, gestión e implementación de valor agregado en soluciones logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), repuestos críticos y Soluciones de Valor Agregado (VAS).</p>
-          <p data-i18n="about.p2">Nuestro fuerte se basa en la capacidad de implementar soluciones que se adecuen a las necesidades de los clientes en términos de costos y niveles de servicio.</p>
+        <div class="about-content">
+          <span class="section__label section__label--accent anim-in anim-in--left" data-i18n="about.label">Quiénes somos</span>
+          <h2 class="anim-in anim-in--up" data-i18n-html="about.title">Soluciones <span class="t-accent">logísticas</span> a medida</h2>
+          <p class="anim-in anim-in--up" data-i18n-html="about.p1"><strong>Logintec</strong> es una empresa dedicada al diseño, gestión e implementación de valor agregado en soluciones logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), repuestos críticos y Soluciones de Valor Agregado (VAS).</p>
+          <p class="anim-in anim-in--up" data-i18n="about.p2">Nuestro fuerte se basa en la capacidad de implementar soluciones que se adecuen a las necesidades de los clientes en términos de costos y niveles de servicio.</p>
           <div class="about-values">
-            <div class="value-item">
+            <div class="value-item anim-in anim-in--pop">
               <div class="value-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <strong data-i18n="about.urgency.title">Urgencia</strong>
               <p data-i18n="about.urgency.desc">De mañana, de noche y feriados</p>
             </div>
-            <div class="value-item">
+            <div class="value-item anim-in anim-in--pop">
               <div class="value-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               </div>
               <strong data-i18n="about.precision.title">Precisión</strong>
               <p data-i18n="about.precision.desc">Niveles de servicio garantizados</p>
             </div>
-            <div class="value-item">
+            <div class="value-item anim-in anim-in--pop">
               <div class="value-item__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
               </div>
@@ -422,31 +434,68 @@
             </div>
           </div>
         </div>
-        <div class="about-visual reveal">
-          <div class="about-card about-card--logistics">
-            <span class="about-card__label" data-i18n="about.card.label">50% del negocio</span>
-            <span data-i18n="about.card.logistics.title">Logística</span>
-            <p data-i18n="about.card.logistics.desc">SPL · IOR/EOR · Warehousing · Transporte nacional</p>
+
+        <div class="about-visual">
+          <div class="about-media anim-in anim-in--right anim-in--scale">
+            <img
+              class="about-media__img"
+              src="assets/extras/deposito.jpeg"
+              alt=""
+              loading="lazy"
+              width="900"
+              height="700"
+            />
+            <div class="about-media__cards">
+              <article class="about-card about-card--logistics anim-in anim-in--right">
+                <strong class="about-card__title" data-i18n="about.card.logistics.title">Logística</strong>
+                <p data-i18n="about.card.logistics.desc">SPL · IOR/EOR · Warehousing · Transporte nacional</p>
+                <svg class="about-card__deco" viewBox="0 0 64 40" fill="none" aria-hidden="true">
+                  <path d="M4 28h34l8-10h10v18H4V28z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <circle cx="16" cy="36" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="46" cy="36" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </article>
+              <article class="about-card about-card--cubiscan anim-in anim-in--right">
+                <strong class="about-card__title" data-i18n="about.card.volumetry.title">Volumetría</strong>
+                <p data-i18n="about.card.volumetry.desc">Cubiscan · Dimensionamiento · Pesaje industrial</p>
+                <svg class="about-card__deco" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path d="M24 6l16 8v20l-16 8-16-8V14l16-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M24 22v20M8 14l16 8 16-8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </article>
+            </div>
           </div>
-          <div class="about-card about-card--cubiscan">
-            <span class="about-card__label" data-i18n="about.card.label">50% del negocio</span>
-            <span data-i18n="about.card.volumetry.title">Volumetría</span>
-            <p data-i18n="about.card.volumetry.desc">Cubiscan · Dimensionamiento · Pesaje industrial</p>
+        </div>
+      </div>
+
+      <div class="about-cta anim-in anim-in--up">
+        <div class="container about-cta__inner">
+          <div class="about-cta__text">
+            <span class="about-cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <p data-i18n="about.cta.text">Conocé cómo optimizamos tu operación logística.</p>
           </div>
+          <a href="#contacto" class="hero-pill-btn hero-pill-btn--sm about-cta__btn">
+            <span data-i18n="nav.contact">Contáctenos</span>
+            <span class="hero-pill-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Contacto -->
-    <section class="section section--contact" id="contacto">
+    <section class="section section--contact" id="contacto" data-anim-section>
       <div class="container">
-        <div class="contact-wrapper reveal">
+        <div class="contact-wrapper">
           <div class="contact-info">
-            <span class="section__label" data-i18n="contact.label">Contáctenos</span>
-            <h2 data-i18n-html="contact.title">Hablemos de su <span class="t-accent">próximo proyecto</span></h2>
-            <p data-i18n="contact.desc">Logística crítica o equipos de dimensionamiento — estamos listos para ayudarle.</p>
+            <span class="section__label anim-in anim-in--left" data-i18n="contact.label">Contáctenos</span>
+            <h2 class="anim-in anim-in--up" data-i18n-html="contact.title">Hablemos de su <span class="t-accent">próximo proyecto</span></h2>
+            <p class="anim-in anim-in--up" data-i18n="contact.desc">Logística crítica o equipos de dimensionamiento — estamos listos para ayudarle.</p>
             <div class="contact-details">
-              <a href="tel:+541120938009" class="contact-item">
+              <a href="tel:+541120938009" class="contact-item anim-in anim-in--left">
                 <div class="contact-item__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
@@ -455,7 +504,7 @@
                   <strong>(011) 2093-8009</strong>
                 </div>
               </a>
-              <a href="mailto:info@logintec.com" class="contact-item">
+              <a href="mailto:info@logintec.com" class="contact-item anim-in anim-in--left">
                 <div class="contact-item__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
@@ -464,7 +513,7 @@
                   <strong>info@logintec.com</strong>
                 </div>
               </a>
-              <div class="contact-item">
+              <div class="contact-item anim-in anim-in--left">
                 <div class="contact-item__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
@@ -475,7 +524,7 @@
               </div>
             </div>
           </div>
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form anim-in anim-in--right anim-in--scale" id="contactForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre" data-i18n="form.name">Nombre</label>
@@ -529,10 +578,11 @@
           <a href="#logistica">Warehousing</a>
         </div>
         <div>
-          <h4 data-i18n="footer.cubiscan">Cubiscan</h4>
-          <a href="dimensionadores.html" data-i18n="footer.equipment">Equipos</a>
-          <a href="dimensionadores.html" data-i18n="footer.volumetry">Volumetría</a>
-          <a href="#contacto" data-i18n="footer.demo">Demostración</a>
+          <h4 data-i18n="footer.volumetry">Volumetría</h4>
+          <a href="dimensionadores.html#agh" data-i18n="dim.agh.title">AGH</a>
+          <a href="dimensionadores.html#cubiscan" data-i18n="dim.cubiscan.title">Cubiscan</a>
+          <a href="dimensionadores.html#conlida" data-i18n="dim.conlida.title">Conlida</a>
+          <a href="dimensionadores.html#cubetape" data-i18n="dim.cubetape.title">CubeTape</a>
         </div>
         <div>
           <h4 data-i18n="footer.contact">Contacto</h4>

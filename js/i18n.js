@@ -56,6 +56,15 @@ const LogintecI18n = (() => {
 
       'service.spl.desc': 'Entregas en 2 horas en AMBA, hora estipulada, NFO y NBD. Soportamos caídas en sistemas y mantenimientos urgentes.',
       'service.ior.desc': 'IOR y EOR para clientes internacionales. Gestionamos toda la documentación para que sus productos ingresen al país sin demoras.',
+      'service.ior.more': 'Más info',
+      'service.ior.detail.p1': 'Hemos desarrollado los servicios de IOR & EOR para atender las necesidades de nuestros clientes internacionales.',
+      'service.ior.detail.p2': 'En la mayoría de los países es esencial que su empresa tenga presencia fiscal para poder importar productos; y obtener una licencia de importador/exportador requiere mucho tiempo (varios meses) y mucho dinero. Nuestro servicio asiste a las empresas que no cuentan con dicha presencia corporativa, utilizando nuestra entidad de IOR & EOR.',
+      'service.ior.detail.p3': 'Logintec ofrece un rápido desarrollo y parametrización para los procesos de importación/exportación de partes y productos críticos; incluyendo:',
+      'service.ior.detail.li1': 'Actuar como el importador/exportador para la aduana y en relación a la declaración de los impuestos a la hora de la importación/exportación;',
+      'service.ior.detail.li2': 'Ser la entidad responsable frente a las aduanas, a los impuestos y a otras autoridades reguladoras;',
+      'service.ior.detail.li3': 'Solicitar las licencias o permisos para las importaciones/exportaciones;',
+      'service.ior.detail.li4': 'Mantener los productos la duración mínima requerida bajo la ley local; y',
+      'service.ior.detail.li5': 'Completar todos los formularios regulares asociados al pago de tasas e impuestos.',
       'service.wh.desc': 'Almacenaje tecnológico, entregas puerta a puerta en todo el país y CrossDocking para reducir tiempos de entrega.',
 
       'feature.customs': 'Documentación aduanera',
@@ -108,6 +117,7 @@ const LogintecI18n = (() => {
       'about.card.logistics.desc': 'SPL · IOR/EOR · Warehousing · Transporte nacional',
       'about.card.volumetry.title': 'Volumetría',
       'about.card.volumetry.desc': 'Cubiscan · Dimensionamiento · Pesaje industrial',
+      'about.cta.text': 'Conocé cómo optimizamos tu operación logística.',
 
       'empresa.meta.title': 'Empresa – Logintec',
       'empresa.meta.description': 'Conozca Logintec: más de 20 años en logística crítica, SPL, IOR/EOR y soluciones de valor agregado en Argentina.',
@@ -430,6 +440,15 @@ const LogintecI18n = (() => {
 
       'service.spl.desc': '2-hour deliveries in Greater Buenos Aires, scheduled time, NFO and NBD. We support system outages and urgent maintenance.',
       'service.ior.desc': 'IOR and EOR for international clients. We handle all documentation so your products enter the country without delays.',
+      'service.ior.more': 'More info',
+      'service.ior.detail.p1': 'We developed IOR & EOR services to meet the needs of our international clients.',
+      'service.ior.detail.p2': 'In most countries it is essential for your company to have a fiscal presence in order to import products; and obtaining an importer/exporter license takes a long time (several months) and a lot of money. Our service assists companies that do not have such a corporate presence by using our IOR & EOR entity.',
+      'service.ior.detail.p3': 'Logintec offers rapid setup and parameterization for import/export processes of critical parts and products, including:',
+      'service.ior.detail.li1': 'Acting as the importer/exporter for customs and for tax declarations at the time of import/export;',
+      'service.ior.detail.li2': 'Being the responsible entity before customs, tax authorities and other regulators;',
+      'service.ior.detail.li3': 'Requesting licenses or permits for imports/exports;',
+      'service.ior.detail.li4': 'Keeping products for the minimum period required under local law; and',
+      'service.ior.detail.li5': 'Completing all standard forms associated with the payment of fees and taxes.',
       'service.wh.desc': 'Tech warehousing, door-to-door deliveries nationwide and cross-docking to reduce lead times.',
 
       'feature.customs': 'Customs documentation',
@@ -482,6 +501,7 @@ const LogintecI18n = (() => {
       'about.card.logistics.desc': 'SPL · IOR/EOR · Warehousing · National transport',
       'about.card.volumetry.title': 'Volumetry',
       'about.card.volumetry.desc': 'Cubiscan · Dimensioning · Industrial weighing',
+      'about.cta.text': 'See how we optimize your logistics operation.',
 
       'empresa.meta.title': 'Company – Logintec',
       'empresa.meta.description': 'Learn about Logintec: over 20 years in critical logistics, SPL, IOR/EOR and value-added solutions in Argentina.',

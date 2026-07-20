@@ -151,10 +151,10 @@
 
     <!-- Misión / Visión -->
     <section class="empresa-mv" id="historia">
-      <div class="empresa-mv__shell reveal">
-        <div class="empresa-mv__panel">
+      <div class="empresa-mv__shell">
+        <div class="empresa-mv__panel" data-anim-group>
             <div class="empresa-mv__row">
-              <div class="empresa-mv__card">
+              <div class="empresa-mv__card anim-in anim-in--left anim-in--scale">
                 <div class="empresa-mv__card-head">
                   <div class="empresa-mv__card-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -163,7 +163,7 @@
                 </div>
                 <p data-i18n="empresa.mission.text">Brindar soluciones logísticas críticas y tecnología de dimensionamiento inteligente que optimicen las operaciones de nuestros clientes, generando valor y relaciones de largo plazo.</p>
               </div>
-              <div class="empresa-mv__card">
+              <div class="empresa-mv__card anim-in anim-in--right anim-in--scale">
                 <div class="empresa-mv__card-head">
                   <div class="empresa-mv__card-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
@@ -173,18 +173,20 @@
                 <p data-i18n="empresa.vision.text">Ser líderes en soluciones logísticas y tecnológicas en Latinoamérica, reconocidos por nuestra innovación, calidad de servicio y compromiso con el crecimiento de nuestros clientes.</p>
               </div>
             </div>
-            <div class="empresa-mv__presence">
-              <div class="empresa-mv__map" aria-hidden="true"></div>
+            <div class="empresa-mv__presence anim-in anim-in--up">
+              <div class="empresa-mv__map" aria-hidden="true">
+                <img src="assets/extras/mapa.png" alt="" loading="lazy" width="400" height="220" />
+              </div>
               <div class="empresa-mv__presence-text">
                 <h3 data-i18n="empresa.presence.title">Presencia en todo el país</h3>
                 <p data-i18n="empresa.presence.desc">Operaciones propias y socios estratégicos en los principales puntos logísticos.</p>
               </div>
             </div>
           </div>
-          <div class="empresa-mv__gallery">
-            <img src="assets/extras/avion.jpeg" alt="" loading="lazy" />
-            <img src="assets/extras/deposito.jpeg" alt="" loading="lazy" />
-            <img src="assets/extras/logintecdepo.png" alt="" loading="lazy" />
+          <div class="empresa-mv__gallery" data-anim-group>
+            <img class="anim-in anim-in--up anim-in--scale" src="assets/extras/avion.jpeg" alt="" loading="lazy" />
+            <img class="anim-in anim-in--up anim-in--scale" src="assets/extras/deposito.jpeg" alt="" loading="lazy" />
+            <img class="anim-in anim-in--up anim-in--scale" src="assets/extras/logintecdepo.png" alt="" loading="lazy" />
           </div>
       </div>
     </section>
@@ -243,10 +245,11 @@
           <a href="index.html#logistica">Warehousing</a>
         </div>
         <div>
-          <h4 data-i18n="footer.cubiscan">Cubiscan</h4>
-          <a href="dimensionadores.html" data-i18n="footer.equipment">Equipos</a>
-          <a href="dimensionadores.html" data-i18n="footer.volumetry">Volumetría</a>
-          <a href="index.html#contacto" data-i18n="footer.demo">Demostración</a>
+          <h4 data-i18n="footer.volumetry">Volumetría</h4>
+          <a href="dimensionadores.html#agh" data-i18n="dim.agh.title">AGH</a>
+          <a href="dimensionadores.html#cubiscan" data-i18n="dim.cubiscan.title">Cubiscan</a>
+          <a href="dimensionadores.html#conlida" data-i18n="dim.conlida.title">Conlida</a>
+          <a href="dimensionadores.html#cubetape" data-i18n="dim.cubetape.title">CubeTape</a>
         </div>
         <div>
           <h4 data-i18n="footer.contact">Contacto</h4>
