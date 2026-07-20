@@ -4302,7 +4302,23 @@ body.eq-detail-open {
   }
 
   .eq-detail__specs {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .eq-detail__spec {
+    padding: 12px 8px;
+    gap: 6px;
+  }
+
+  .eq-detail__spec svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .eq-detail__spec span {
+    font-size: 0.72rem;
+    line-height: 1.3;
   }
 
   .eq-detail__actions {
@@ -4482,7 +4498,29 @@ body.eq-detail-open {
   }
 
   .equipos-trust__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
+    padding: 18px 14px;
+  }
+
+  .equipos-trust__item {
+    padding: 2px 4px;
+    gap: 8px;
+  }
+
+  .equipos-trust__item svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .equipos-trust__item strong {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  .equipos-trust__item span {
+    font-size: 0.7rem;
+    line-height: 1.35;
   }
 
   .eq-card__specs {
@@ -5228,7 +5266,8 @@ body.eq-detail-open {
   }
 
   .empresa-mv__gallery img {
-    min-height: 180px;
+    min-height: 140px;
+    height: 140px;
   }
 
   .services-grid { grid-template-columns: 1fr; }
@@ -5493,36 +5532,29 @@ body.eq-detail-open {
   }
 
   .dim-brand__features {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
     margin-bottom: 22px;
   }
 
   .dim-brand__feature {
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    row-gap: 2px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .dim-brand__feature-icon {
-    grid-row: 1 / span 2;
-    grid-column: 1;
-    width: 40px;
-    height: 40px;
-    margin-top: 1px;
+    width: 36px;
+    height: 36px;
   }
 
   .dim-brand__feature strong {
-    grid-column: 2;
-    grid-row: 1;
+    font-size: 0.78rem;
   }
 
   .dim-brand__feature span {
-    grid-column: 2;
-    grid-row: 2;
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
   .dim-brand__product {
@@ -5799,8 +5831,42 @@ body.eq-detail-open {
     padding-right: 24px;
   }
 
-  .empresa-stats { grid-template-columns: 1fr; }
-  .empresa-values__grid { grid-template-columns: 1fr; }
+  .empresa-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 12px;
+  }
+
+  .empresa-stat__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .empresa-stat__icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .empresa-stat strong {
+    font-size: 0.68rem;
+  }
+
+  .empresa-stat span {
+    font-size: 0.66rem;
+  }
+
+  .empresa-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+  }
+
+  .empresa-value strong {
+    font-size: 0.68rem;
+  }
+
+  .empresa-value span {
+    font-size: 0.66rem;
+  }
+
   .empresa-mv__row { grid-template-columns: 1fr; }
   .empresa-mv__card {
     padding: 0 0 20px;
@@ -5812,19 +5878,25 @@ body.eq-detail-open {
   }
   .empresa-mv__presence {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
+
+  .empresa-mv__presence-text {
+    order: 1;
+  }
+
   .empresa-mv__map {
+    order: 2;
     min-height: 96px;
+    justify-content: flex-start;
   }
 
   .empresa-mv__map img {
     max-width: 180px;
     max-height: 110px;
   }
-  .empresa-mv__gallery { grid-template-columns: 1fr; }
-  .empresa-mv__gallery img {
-    border-top: none;
+  .empresa-mv__gallery {
+    display: none;
   }
 }
 
