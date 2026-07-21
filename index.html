@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -558,6 +558,9 @@
               <label for="mensaje" data-i18n="form.message">Mensaje</label>
               <textarea id="mensaje" name="mensaje" rows="4" required data-i18n-placeholder="form.messagePlaceholder" placeholder="Cuéntenos sobre su necesidad..."></textarea>
             </div>
+            <div class="form-recaptcha" id="formRecaptcha">
+              <div id="recaptchaWidget"></div>
+            </div>
             <p class="form-status" role="status" aria-live="polite" hidden></p>
             <button type="submit" class="btn btn--primary btn--large btn--full" data-i18n="form.submit">Enviar consulta</button>
           </form>
@@ -604,6 +607,7 @@
     </div>
   </footer>
 
+  <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>

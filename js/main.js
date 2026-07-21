@@ -364,8 +364,58 @@ function initDimHeroCounters() {
   nums.forEach((num) => observer.observe(num));
 }
 
-/* Contact form – FormSubmit (hash oculto, destino: mmartinez@logintec.com) */
-const FORMSUBMIT_ID = '53b3f6a9c7918a50bb8596d909b44aed';
+/* Contact form – FormSubmit + Google reCAPTCHA v2 */
+const FORMSUBMIT_ID = 'info@logintec.com';
+/* Creá tu key en https://www.google.com/recaptcha/admin (reCAPTCHA v2 “No soy un robot”) */
+const RECAPTCHA_SITE_KEY = '6LffZl4tAAAAAOHekxyuC0CdcJa9NUxKlu8ym0ff';
+
+let recaptchaWidgetId = null;
+
+window.onRecaptchaLoad = function onRecaptchaLoad() {
+  renderRecaptcha();
+};
+
+function renderRecaptcha() {
+  const el = document.getElementById('recaptchaWidget');
+  if (!el || typeof grecaptcha === 'undefined' || !grecaptcha.render) return;
+
+  const lang = typeof LogintecI18n !== 'undefined' && LogintecI18n.getLang
+    ? LogintecI18n.getLang()
+    : 'es';
+
+  // Contenedor limpio para poder re-renderizar (cambio de idioma)
+  const mount = document.createElement('div');
+  el.innerHTML = '';
+  el.appendChild(mount);
+  recaptchaWidgetId = null;
+
+  recaptchaWidgetId = grecaptcha.render(mount, {
+    sitekey: RECAPTCHA_SITE_KEY,
+    theme: 'light',
+    hl: lang === 'en' ? 'en' : 'es',
+  });
+}
+
+function resetRecaptcha() {
+  if (typeof grecaptcha === 'undefined') return;
+  try {
+    if (recaptchaWidgetId !== null) grecaptcha.reset(recaptchaWidgetId);
+    else grecaptcha.reset();
+  } catch (_) {
+    renderRecaptcha();
+  }
+}
+
+function getRecaptchaToken() {
+  if (typeof grecaptcha === 'undefined') return '';
+  try {
+    return recaptchaWidgetId !== null
+      ? grecaptcha.getResponse(recaptchaWidgetId)
+      : grecaptcha.getResponse();
+  } catch (_) {
+    return '';
+  }
+}
 
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -384,6 +434,11 @@ function initContactForm() {
   const isSuccess = (result) =>
     result && (result.success === true || result.success === 'true');
 
+  document.addEventListener('languagechange', () => {
+    // reCAPTCHA fija el idioma al renderizar
+    if (typeof grecaptcha !== 'undefined') renderRecaptcha();
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -391,6 +446,12 @@ function initContactForm() {
     const data = Object.fromEntries(formData.entries());
 
     if (data._honey) return;
+
+    const captchaToken = getRecaptchaToken();
+    if (!captchaToken) {
+      setStatus('error', LogintecI18n.t('form.captchaError'));
+      return;
+    }
 
     const interestLabels = {
       logistica: LogintecI18n.t('form.interest.logistics'),
@@ -421,6 +482,7 @@ function initContactForm() {
           company: data.empresa || 'N/A',
           interest: interestLabel,
           message: data.mensaje,
+          'g-recaptcha-response': captchaToken,
           _subject: `Consulta Logintec – ${interestLabel}`,
           _template: 'table',
           _captcha: 'false',
@@ -440,8 +502,10 @@ function initContactForm() {
       }
 
       form.reset();
+      resetRecaptcha();
       setStatus('success', LogintecI18n.t('form.success'));
     } catch (err) {
+      resetRecaptcha();
       if (err && err.message === 'needs_server') {
         setStatus('error', LogintecI18n.t('form.needsServer'));
       } else {
