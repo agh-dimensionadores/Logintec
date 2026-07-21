@@ -364,37 +364,93 @@ function initDimHeroCounters() {
   nums.forEach((num) => observer.observe(num));
 }
 
-/* Contact form */
+/* Contact form – FormSubmit (hash oculto, destino: mmartinez@logintec.com) */
+const FORMSUBMIT_ID = '53b3f6a9c7918a50bb8596d909b44aed';
+
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const btn = form.querySelector('button[type="submit"]');
+  const statusEl = form.querySelector('.form-status');
+
+  const setStatus = (type, message) => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.className = `form-status form-status--${type}`;
+    statusEl.hidden = !message;
+  };
+
+  const isSuccess = (result) =>
+    result && (result.success === true || result.success === 'true');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    const subject = encodeURIComponent(`Consulta Logintec - ${data.interes}`);
-    const body = encodeURIComponent(
-      `Nombre: ${data.nombre}\n` +
-      `Empresa: ${data.empresa || 'N/A'}\n` +
-      `Email: ${data.email}\n` +
-      `Interés: ${data.interes}\n\n` +
-      `Mensaje:\n${data.mensaje}`
-    );
+    if (data._honey) return;
 
-    window.location.href = `mailto:info@logintec.com?subject=${subject}&body=${body}`;
+    const interestLabels = {
+      logistica: LogintecI18n.t('form.interest.logistics'),
+      cubiscan: LogintecI18n.t('form.interest.cubiscan'),
+      ambos: LogintecI18n.t('form.interest.both'),
+    };
+    const interestLabel = interestLabels[data.interes] || data.interes;
 
-    const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = LogintecI18n.t('form.submitting');
     btn.disabled = true;
+    setStatus('', '');
 
-    setTimeout(() => {
+    try {
+      if (window.location.protocol === 'file:') {
+        throw new Error('needs_server');
+      }
+
+      const response = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.nombre,
+          email: data.email,
+          company: data.empresa || 'N/A',
+          interest: interestLabel,
+          message: data.mensaje,
+          _subject: `Consulta Logintec – ${interestLabel}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      const messageText = String(result.message || '').toLowerCase();
+
+      if (messageText.includes('activation') || messageText.includes('activate')) {
+        setStatus('error', LogintecI18n.t('form.activate'));
+        return;
+      }
+
+      if (!response.ok || !isSuccess(result)) {
+        throw new Error(result.message || 'Error al enviar');
+      }
+
+      form.reset();
+      setStatus('success', LogintecI18n.t('form.success'));
+    } catch (err) {
+      if (err && err.message === 'needs_server') {
+        setStatus('error', LogintecI18n.t('form.needsServer'));
+      } else {
+        setStatus('error', LogintecI18n.t('form.error'));
+      }
+    } finally {
       btn.textContent = originalText;
       btn.disabled = false;
-    }, 3000);
+    }
   });
 }
 
@@ -658,8 +714,15 @@ function initEquiposDetail() {
     const specs = Array.from(card.querySelectorAll('.eq-card__spec'));
     const highlightItems = Array.from(card.querySelectorAll('.eq-card__highlights li'));
     const lang = getEquiposLang() === 'en' ? 'en' : 'es';
-    const datasheet = card.getAttribute(`data-datasheet-${lang}`) || '';
-    const brochure = card.getAttribute(`data-brochure-${lang}`) || '';
+    const otherLang = lang === 'en' ? 'es' : 'en';
+    const datasheet =
+      card.getAttribute(`data-datasheet-${lang}`) ||
+      card.getAttribute(`data-datasheet-${otherLang}`) ||
+      '';
+    const brochure =
+      card.getAttribute(`data-brochure-${lang}`) ||
+      card.getAttribute(`data-brochure-${otherLang}`) ||
+      '';
     const video = card.dataset.video || '';
 
     els.name.textContent = name;

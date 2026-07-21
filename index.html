@@ -525,6 +525,7 @@
             </div>
           </div>
           <form class="contact-form anim-in anim-in--right anim-in--scale" id="contactForm">
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre" data-i18n="form.name">Nombre</label>
@@ -553,6 +554,7 @@
               <label for="mensaje" data-i18n="form.message">Mensaje</label>
               <textarea id="mensaje" name="mensaje" rows="4" required data-i18n-placeholder="form.messagePlaceholder" placeholder="Cuéntenos sobre su necesidad..."></textarea>
             </div>
+            <p class="form-status" role="status" aria-live="polite" hidden></p>
             <button type="submit" class="btn btn--primary btn--large btn--full" data-i18n="form.submit">Enviar consulta</button>
           </form>
         </div>
