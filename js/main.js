@@ -657,10 +657,32 @@ function initEquiposGalleries(root) {
   root.querySelectorAll('[data-gallery]').forEach((gallery) => {
     const images = Array.from(gallery.querySelectorAll('img'));
     const dots = Array.from(gallery.querySelectorAll('.eq-card__dot'));
+    if (!images.length) return;
+
+    // Solo la imagen activa tiene src; el resto usa data-src (evita bajar 10–50 MB por card en móvil)
+    images.forEach((img) => {
+      const url = img.getAttribute('src') || img.dataset.src || '';
+      if (!url) return;
+      img.dataset.src = url;
+      if (img.classList.contains('is-active')) {
+        img.setAttribute('src', url);
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      } else {
+        img.removeAttribute('src');
+      }
+    });
+
     if (images.length < 2) return;
 
     const show = (index) => {
-      images.forEach((img, i) => img.classList.toggle('is-active', i === index));
+      images.forEach((img, i) => {
+        const active = i === index;
+        img.classList.toggle('is-active', active);
+        if (active && img.dataset.src && img.getAttribute('src') !== img.dataset.src) {
+          img.setAttribute('src', img.dataset.src);
+        }
+      });
       dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
     };
 
@@ -672,6 +694,11 @@ function initEquiposGalleries(root) {
       });
     });
   });
+}
+
+function getEquiposImageUrl(img) {
+  if (!img) return '';
+  return img.dataset.src || img.getAttribute('src') || img.currentSrc || '';
 }
 
 function tEq(key, fallback) {
@@ -829,14 +856,17 @@ function initEquiposDetail() {
     els.thumbs.innerHTML = '';
     const alt = name;
     if (images.length) {
-      setMainImage(images[0].currentSrc || images[0].src, alt);
+      const firstUrl = getEquiposImageUrl(images[0]);
+      setMainImage(firstUrl, alt);
       images.forEach((img, index) => {
-        const src = img.currentSrc || img.src;
+        const src = getEquiposImageUrl(img);
+        if (!src) return;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = `eq-detail__thumb${index === 0 ? ' is-active' : ''}`;
         btn.setAttribute('aria-label', `${alt} ${index + 1}`);
-        btn.innerHTML = `<img src="${src}" alt="" />`;
+        // Thumbs livianos: solo cargan al abrir el detalle
+        btn.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async" />`;
         btn.addEventListener('click', () => {
           setMainImage(src, alt);
           els.thumbs.querySelectorAll('.eq-detail__thumb').forEach((t) => t.classList.remove('is-active'));
