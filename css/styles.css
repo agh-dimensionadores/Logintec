@@ -3868,6 +3868,7 @@ a.contact-item:hover {
   justify-content: center;
   padding: 28px 24px 34px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .eq-card__media img {
@@ -3902,29 +3903,44 @@ a.contact-item:hover {
   opacity: 1;
 }
 
-.eq-card__dots {
+.eq-card__nav {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 6px;
+  inset: 0;
   z-index: 2;
+  pointer-events: none;
 }
 
-.eq-card__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gray-300);
-  padding: 0;
+.eq-card__arrow {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--burgundy-800, #5c1a2e);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
   transition: var(--transition);
 }
 
-.eq-card__dot.is-active,
-.eq-card__dot:hover {
-  background: var(--burgundy-800);
+.eq-card__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.eq-card__arrow--prev { left: 8px; }
+.eq-card__arrow--next { right: 8px; }
+
+.eq-card__arrow:hover {
+  background: var(--white);
+  border-color: rgba(118, 184, 42, 0.45);
+  color: var(--green-700, #5a8f1f);
 }
 
 .eq-card__media--placeholder {

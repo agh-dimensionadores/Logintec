@@ -654,12 +654,19 @@ function initEquiposCatalog() {
 }
 
 function initEquiposGalleries(root) {
+  const arrowSvg = (dir) =>
+    dir === 'prev'
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
   root.querySelectorAll('[data-gallery]').forEach((gallery) => {
     const images = Array.from(gallery.querySelectorAll('img'));
-    const dots = Array.from(gallery.querySelectorAll('.eq-card__dot'));
     if (!images.length) return;
 
-    // Solo la imagen activa tiene src; el resto usa data-src (evita bajar 10–50 MB por card en móvil)
+    // Quitar circulitos viejos
+    gallery.querySelectorAll('.eq-card__dots').forEach((el) => el.remove());
+
+    // Solo la imagen activa tiene src; el resto usa data-src
     images.forEach((img) => {
       const url = img.getAttribute('src') || img.dataset.src || '';
       if (!url) return;
@@ -675,7 +682,18 @@ function initEquiposGalleries(root) {
 
     if (images.length < 2) return;
 
-    const show = (index) => {
+    let index = Math.max(0, images.findIndex((img) => img.classList.contains('is-active')));
+
+    const nav = document.createElement('div');
+    nav.className = 'eq-card__nav';
+    nav.innerHTML = `
+      <button type="button" class="eq-card__arrow eq-card__arrow--prev" data-gallery-nav="prev" aria-label="${tEq('dim.equipos.prevImage', 'Imagen anterior')}">${arrowSvg('prev')}</button>
+      <button type="button" class="eq-card__arrow eq-card__arrow--next" data-gallery-nav="next" aria-label="${tEq('dim.equipos.nextImage', 'Imagen siguiente')}">${arrowSvg('next')}</button>
+    `;
+    gallery.appendChild(nav);
+
+    const show = (nextIndex) => {
+      index = (nextIndex + images.length) % images.length;
       images.forEach((img, i) => {
         const active = i === index;
         img.classList.toggle('is-active', active);
@@ -683,14 +701,13 @@ function initEquiposGalleries(root) {
           img.setAttribute('src', img.dataset.src);
         }
       });
-      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
     };
 
-    dots.forEach((dot) => {
-      dot.addEventListener('click', (e) => {
+    nav.querySelectorAll('[data-gallery-nav]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        show(Number(dot.dataset.index) || 0);
+        show(btn.dataset.galleryNav === 'next' ? index + 1 : index - 1);
       });
     });
   });
@@ -931,7 +948,10 @@ function initEquiposDetail() {
   };
 
   grid.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.eq-card__link');
+    // Las flechas de galería no abren el detalle
+    if (e.target.closest('[data-gallery-nav], .eq-card__arrow, .eq-card__nav')) return;
+
+    const trigger = e.target.closest('.eq-card__link, .eq-card__media, .eq-card__gallery');
     if (!trigger) return;
     const card = trigger.closest('.eq-card');
     if (!card) return;
