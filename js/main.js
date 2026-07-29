@@ -456,7 +456,6 @@ function initContactForm() {
     const interestLabels = {
       logistica: LogintecI18n.t('form.interest.logistics'),
       cubiscan: LogintecI18n.t('form.interest.cubiscan'),
-      ambos: LogintecI18n.t('form.interest.both'),
     };
     const interestLabel = interestLabels[data.interes] || data.interes;
 
