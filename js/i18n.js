@@ -7,7 +7,7 @@ const LogintecI18n = (() => {
   const translations = {
     es: {
       'meta.title': 'Logintec – Critical Logistics Management',
-      'meta.description': 'Logintec – Critical Logistics Management. Soluciones logísticas críticas y sistemas Cubiscan de dimensionamiento.',
+      'meta.description': 'Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL) y volumetría.',
 
       'nav.services': 'Servicios',
       'nav.company': 'Empresa',
@@ -64,7 +64,7 @@ const LogintecI18n = (() => {
       'logistics.ctaAll': 'Ver todos los servicios',
 
       'servicios.meta.title': 'Servicios – Logintec',
-      'servicios.meta.description': 'Servicios logísticos Logintec: SPL, IOR/EOR, warehousing, entregas ASAP, NFO y transporte nacional para partes críticas.',
+      'servicios.meta.description': 'Logintec es su mejor solución de Supply Chain por el alcance de sus entregas de partes y componentes de recambio en tiempos críticos: SPL, IOR/EOR y warehousing.',
       'servicios.hero.label': 'Nuestros servicios',
       'servicios.hero.title': 'Logística de partes <span class="t-accent">críticas</span>',
       'servicios.hero.desc': 'Diseñamos, gestionamos e implementamos soluciones logísticas de valor agregado para industrias que no pueden detenerse: SPL, IOR/EOR, almacenaje y transporte puerta a puerta.',
@@ -164,7 +164,7 @@ const LogintecI18n = (() => {
       'about.cta.text': 'Conocé cómo podemos optimizar tu operación logística.',
 
       'empresa.meta.title': 'Empresa – Logintec',
-      'empresa.meta.description': 'Conozca Logintec: más de 20 años en logística crítica, SPL, IOR/EOR y soluciones de valor agregado en Argentina.',
+      'empresa.meta.description': 'Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL).',
       'empresa.hero.label': 'Sobre nosotros',
       'empresa.hero.title': 'Más de 15 años desafiando a la logística <span class="t-accent">crítica</span>',
       'empresa.hero.p1': 'Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), Repuestos críticos y Soluciones de Valor Agregado (VAS), tales como fullfilment, reflashing, screening y distribución.',
@@ -239,8 +239,8 @@ const LogintecI18n = (() => {
       'footer.demo': 'Demostración',
       'footer.rights': '© 2026 Logintec. Todos los derechos reservados.',
 
-      'dim.meta.title': 'Dimensionadores – Logintec',
-      'dim.meta.description': 'Dimensionadores AGH, Cubiscan, Conlida y CubeTape. Equipos de medición inteligente para optimizar espacio y costos en su operación logística.',
+      'dim.meta.title': 'Volumetría – Logintec',
+      'dim.meta.description': 'Volumetría Logintec: dimensionadores AGH, Cubiscan, Conlida y CubeTape. Equipos de medición inteligente para optimizar espacio y costos en su operación logística.',
       'dim.intro.label': 'Tecnología de medición inteligente',
       'dim.intro.title': '<span class="dim-hero__title-line">Medición precisa.</span><span class="dim-hero__title-line">Decisiones <span class="t-accent">inteligentes.</span></span>',
       'dim.intro.desc': 'Dimensionadores automáticos de volumen, peso y dimensiones que optimizan el espacio, reducen costos y mejoran la eficiencia en cada etapa de tu operación logística.',
@@ -443,7 +443,7 @@ const LogintecI18n = (() => {
 
     en: {
       'meta.title': 'Logintec – Critical Logistics Management',
-      'meta.description': 'Logintec – Critical Logistics Management. Critical logistics solutions and Cubiscan dimensioning systems.',
+      'meta.description': 'Logintec designs, manages and implements value-added logistics solutions. Focused on Service Parts Logistics (SPL) and volumetry.',
 
       'nav.services': 'Services',
       'nav.company': 'Company',
@@ -500,7 +500,7 @@ const LogintecI18n = (() => {
       'logistics.ctaAll': 'View all services',
 
       'servicios.meta.title': 'Services – Logintec',
-      'servicios.meta.description': 'Logintec logistics services: SPL, IOR/EOR, warehousing, ASAP deliveries, NFO and nationwide transport for critical parts.',
+      'servicios.meta.description': 'Logintec is your best Supply Chain solution for critical spare parts and components delivery: SPL, IOR/EOR and warehousing.',
       'servicios.hero.label': 'Our services',
       'servicios.hero.title': 'Critical parts <span class="t-accent">logistics</span>',
       'servicios.hero.desc': 'We design, manage and implement value-added logistics solutions for industries that cannot stop: SPL, IOR/EOR, warehousing and door-to-door transport.',
@@ -600,7 +600,7 @@ const LogintecI18n = (() => {
       'about.cta.text': 'See how we can optimize your logistics operation.',
 
       'empresa.meta.title': 'Company – Logintec',
-      'empresa.meta.description': 'Learn about Logintec: over 20 years in critical logistics, SPL, IOR/EOR and value-added solutions in Argentina.',
+      'empresa.meta.description': 'Logintec designs, manages and implements value-added logistics solutions. Focused on Service Parts Logistics (SPL).',
       'empresa.hero.label': 'About us',
       'empresa.hero.title': 'Over 15 years challenging <span class="t-accent">critical</span> logistics',
       'empresa.hero.p1': 'Logintec is a company dedicated to designing, managing and implementing value-added Logistics Solutions. Mainly focused on Service Parts Logistics (SPL), critical spare parts and Value Added Services (VAS), such as fulfillment, reflashing, screening and distribution.',
@@ -675,8 +675,8 @@ const LogintecI18n = (() => {
       'footer.demo': 'Demo',
       'footer.rights': '© 2026 Logintec. All rights reserved.',
 
-      'dim.meta.title': 'Dimensioners – Logintec',
-      'dim.meta.description': 'AGH, Cubiscan, Conlida and CubeTape dimensioners. Smart measurement equipment to optimize space and costs in your logistics operation.',
+      'dim.meta.title': 'Volumetry – Logintec',
+      'dim.meta.description': 'Logintec volumetry: AGH, Cubiscan, Conlida and CubeTape dimensioners. Smart measurement equipment to optimize space and costs in your logistics operation.',
       'dim.intro.label': 'Smart measurement technology',
       'dim.intro.title': '<span class="dim-hero__title-line">Precise measurement.</span><span class="dim-hero__title-line">Smart <span class="t-accent">decisions.</span></span>',
       'dim.intro.desc': 'Automatic volume, weight and dimension scanners that optimize space, reduce costs and improve efficiency at every stage of your logistics operation.',
