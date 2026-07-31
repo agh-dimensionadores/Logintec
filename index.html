@@ -30,7 +30,7 @@
       </a>
 
       <nav class="nav" id="nav">
-        <a href="index.html#logistica" data-i18n="nav.services">Servicios</a>
+        <a href="servicios.html" data-i18n="nav.services">Servicios</a>
         <a href="empresa.html" data-i18n="nav.company">Empresa</a>
         <a href="dimensionadores.html" data-i18n="nav.volumetry">Dimensionadores</a>
         <a href="#contacto" class="nav__mobile-cta" data-i18n="nav.contact">Contáctenos</a>
@@ -57,55 +57,57 @@
   </header>
 
   <main>
-    <!-- Hero editorial -->
+    <!-- Hero split -->
     <section class="hero" id="inicio">
-      <div class="hero__media hero__media--left" aria-hidden="true">
+      <a href="servicios.html" class="hero-panel hero-panel--logistics">
         <img
-          src="assets/extras/avion.png"
+          class="hero-panel__img"
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80&auto=format&fit=crop"
           alt=""
-          width="900"
-          height="1200"
           loading="eager"
         />
-        <span class="hero__media-tag" data-i18n="hero.tagLogistics">Logística</span>
-      </div>
-
-      <div class="hero__media hero__media--right" aria-hidden="true">
-        <img
-          src="assets/extras/container.png"
-          alt=""
-          width="900"
-          height="1200"
-          loading="eager"
-        />
-        <span class="hero__media-tag hero__media-tag--green" data-i18n="hero.tagVolumetry">Volumetría</span>
-      </div>
-
-      <div class="hero__center">
-        <p class="hero__eyebrow">Critical Logistics Management</p>
-        <h1 class="hero__headline">
-          <span class="hero-rotate" id="heroRotate" aria-live="polite">
-            <span class="hero-rotate__text">
-              <span class="t-bold">Importador y </span><span class="t-accent">Exportador Oficial</span>
-            </span>
+        <div class="hero-panel__overlay" aria-hidden="true"></div>
+        <div class="hero-panel__content">
+          <span class="hero-panel__eyebrow" data-i18n="hero.panel.logistics.eyebrow">01 · Logística</span>
+          <span class="hero-panel__line" aria-hidden="true"></span>
+          <h1 class="hero-panel__title" data-i18n="welcome.card.logistics.title">SOLUCIONES LOGÍSTICAS</h1>
+          <p class="hero-panel__desc" data-i18n="welcome.card.logistics.desc">Logística de servicio de partes (SPL), IOR/EOR, almacenaje y transporte puerta a puerta para repuestos críticos</p>
+          <ul class="hero-panel__chips" aria-label="Servicios clave">
+            <li data-i18n="hero.panel.logistics.chip1">SPL</li>
+            <li data-i18n="hero.panel.logistics.chip2">IOR/EOR</li>
+            <li data-i18n="hero.panel.logistics.chip3">Puerta a puerta</li>
+          </ul>
+          <span class="hero-panel__cta hero-panel__cta--ghost">
+            <span data-i18n="welcome.card.more">Conocé más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
-        </h1>
-
-        <div class="hero__ctas">
-          <a href="#logistica" class="hero-pill-btn">
-            <span data-i18n="hero.ctaLogistics">Servicios de logística</span>
-            <span class="hero-pill-btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
-          <a href="dimensionadores.html" class="hero-pill-btn hero-pill-btn--outline">
-            <span data-i18n="hero.ctaDimensioners">Dimensionadores</span>
-            <span class="hero-pill-btn__icon hero-pill-btn__icon--green" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
         </div>
-      </div>
+      </a>
+
+      <a href="dimensionadores.html" class="hero-panel hero-panel--volumetry">
+        <img
+          class="hero-panel__img"
+          src="assets/extras/dimensionadores.png"
+          alt=""
+          loading="eager"
+        />
+        <div class="hero-panel__overlay" aria-hidden="true"></div>
+        <div class="hero-panel__content">
+          <span class="hero-panel__eyebrow" data-i18n="hero.panel.volumetry.eyebrow">02 · Volumetría</span>
+          <span class="hero-panel__line hero-panel__line--burgundy" aria-hidden="true"></span>
+          <h2 class="hero-panel__title" data-i18n="welcome.card.cubiscan.title">DIMENSIONADORES INTELIGENTES</h2>
+          <p class="hero-panel__desc" data-i18n="welcome.card.cubiscan.desc">Equipos de volumetría para medición precisa, toma de peso y cálculo de volumen en su operación.</p>
+          <ul class="hero-panel__chips" aria-label="Beneficios clave">
+            <li data-i18n="hero.panel.volumetry.chip1">Medición 3D</li>
+            <li data-i18n="hero.panel.volumetry.chip2">Peso y volumen</li>
+            <li data-i18n="hero.panel.volumetry.chip3">Integraciones</li>
+          </ul>
+          <span class="hero-panel__cta hero-panel__cta--ghost">
+            <span data-i18n="welcome.card.more">Conocé más</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
     </section>
 
     <!-- Bienvenida -->
@@ -226,35 +228,6 @@
         </div>
       </div>
 
-      <div class="welcome-cards-wide" data-anim-group>
-        <div class="welcome-cards">
-          <a href="#logistica" class="welcome-card welcome-card--logistics anim-in anim-in--left anim-in--scale">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" />
-            <div class="welcome-card__overlay"></div>
-            <div class="welcome-card__content">
-              <span class="welcome-card__line" aria-hidden="true"></span>
-              <h3 data-i18n="welcome.card.logistics.title">SOLUCIONES LOGÍSTICAS</h3>
-              <p data-i18n="welcome.card.logistics.desc">Logística de servicio de partes (SPL), IOR/EOR, almacenaje y transporte puerta a puerta para repuestos críticos</p>
-              <span class="welcome-card__link">
-                <span data-i18n="welcome.card.more">Conocé más</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </div>
-          </a>
-          <a href="dimensionadores.html" class="welcome-card welcome-card--cubiscan anim-in anim-in--right anim-in--scale">
-            <img src="assets/extras/dimensionadores.png" alt="" loading="lazy" />
-            <div class="welcome-card__overlay"></div>
-            <div class="welcome-card__content">
-              <span class="welcome-card__line welcome-card__line--burgundy" aria-hidden="true"></span>
-              <h3 data-i18n="welcome.card.cubiscan.title">DIMENSIONADORES INTELIGENTES</h3>
-              <p data-i18n="welcome.card.cubiscan.desc">Equipos de volumetría para medición precisa, toma de peso y cálculo de volumen en su operación.</p>
-              <span class="welcome-card__link welcome-card__link--solid">
-                <span data-i18n="welcome.card.more">Conocé más</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </div>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -272,15 +245,12 @@
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Service Parts Logistics</h3>
+            <h3 data-i18n="servicios.spl.title">Service Parts Logistics</h3>
             <p data-i18n="service.spl.desc">Entregas en 2 a 4 horas en AMBA, servicios NFO y NBD para todo el país. Coordinación con los técnicos para una entrega personalizada.</p>
             <ul class="service-card__tags">
               <li>ASAP 2H</li>
               <li>ASAP 4H</li>
             </ul>
-            <button type="button" class="service-card__more">
-              <span data-i18n="service.ior.more">Más info</span>
-            </button>
           </article>
 
           <article class="service-card anim-in anim-in--up anim-in--scale">
@@ -288,11 +258,8 @@
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Importer & Exporter of Record</h3>
+            <h3 data-i18n="servicios.ior.title">Importer & Exporter of Record</h3>
             <p data-i18n="service.ior.desc">IOR y EOR para clientes internacionales. Gestionamos toda la documentación para que sus productos ingresen al país sin contratiempos.</p>
-            <button type="button" class="service-card__more">
-              <span data-i18n="service.ior.more">Más info</span>
-            </button>
           </article>
 
           <article class="service-card anim-in anim-in--right anim-in--scale">
@@ -300,12 +267,17 @@
             <div class="service-card__icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Warehousing & Transport</h3>
+            <h3 data-i18n="servicios.wh.title">Warehousing & Transport</h3>
             <p data-i18n="service.wh.desc">Contamos con un warehouse de gestión propia para poder optimizar los procesos, y reducir los tiempos de entrega.</p>
-            <button type="button" class="service-card__more">
-              <span data-i18n="service.ior.more">Más info</span>
-            </button>
           </article>
+        </div>
+        <div class="section__cta-wrap" data-anim-group>
+          <a href="servicios.html" class="hero-pill-btn anim-in anim-in--up">
+            <span data-i18n="logistics.ctaAll">Ver todos los servicios</span>
+            <span class="hero-pill-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
         </div>
         <div class="features-bar" id="featuresBar" data-anim-group>
           <div class="feature-pill anim-in anim-in--pop">
@@ -575,10 +547,9 @@
       <div class="footer__links">
         <div>
           <h4 data-i18n="footer.logistics">Logística</h4>
-          <a href="empresa.html">Empresa</a>
-          <a href="index.html#logistica">Service Parts Logistics</a>
-          <a href="#logistica">IOR & EOR</a>
-          <a href="#logistica">Warehousing</a>
+          <a href="servicios.html#spl">Service Parts Logistics</a>
+          <a href="servicios.html#ior">IOR & EOR</a>
+          <a href="servicios.html#warehousing">Warehousing</a>
         </div>
         <div>
           <h4 data-i18n="footer.volumetry">Volumetría</h4>

@@ -56,6 +56,7 @@ function initWhatsAppFloat() {
 /* Header scroll behavior */
 function initHeader() {
   const header = document.getElementById('header');
+  if (!header) return;
 
   const updateHeader = () => {
     if (window.scrollY > 20) {
