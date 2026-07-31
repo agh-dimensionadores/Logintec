@@ -816,7 +816,7 @@ function initEquiposDetail() {
 
   const fillFromCard = (card) => {
     const name = card.querySelector('.eq-card__name')?.textContent?.trim() || card.dataset.name || '';
-    const desc = card.querySelector('.eq-card__text')?.textContent?.trim() || '';
+    const descEl = card.querySelector('.eq-card__text');
     const badge = card.querySelector('.eq-card__badge');
     const images = Array.from(card.querySelectorAll('.eq-card__media img'));
     const specs = Array.from(card.querySelectorAll('.eq-card__spec'));
@@ -834,7 +834,7 @@ function initEquiposDetail() {
     const video = card.dataset.video || '';
 
     els.name.textContent = name;
-    els.desc.textContent = desc;
+    els.desc.innerHTML = descEl ? descEl.innerHTML : '';
 
     if (badge) {
       els.badge.hidden = false;

@@ -56,56 +56,111 @@
 
   <main>
     <section class="svc-hero">
+      <div class="svc-hero__media" aria-hidden="true">
+        <img src="assets/extras/camionlogintec.png" alt="" loading="eager" />
+      </div>
+      <div class="svc-hero__veil" aria-hidden="true"></div>
       <div class="container svc-hero__inner reveal">
         <span class="svc-hero__eyebrow" data-i18n="servicios.hero.label">Nuestros servicios</span>
         <h1 class="svc-hero__title" data-i18n-html="servicios.hero.title">Logística de partes <span class="t-accent">críticas</span></h1>
         <p class="svc-hero__desc" data-i18n="servicios.hero.desc">Diseñamos, gestionamos e implementamos soluciones logísticas de valor agregado para industrias que no pueden detenerse: SPL, IOR/EOR, almacenaje y transporte puerta a puerta.</p>
+        <nav class="svc-hero__jump" aria-label="Ir a servicio">
+          <a href="#spl">SPL</a>
+          <a href="#ior">IOR / EOR</a>
+          <a href="#warehousing">Warehousing</a>
+        </nav>
       </div>
     </section>
 
-    <section class="svc-main" id="pilares">
-      <div class="container">
-        <article class="svc-block reveal" id="spl">
-          <div class="svc-block__meta">
-            <span class="svc-block__num">01</span>
-            <span class="svc-block__label" data-i18n="servicios.spl.kicker">SPL</span>
+    <!-- SPL -->
+    <section class="svc-chapter" id="spl">
+      <div class="svc-chapter__shell">
+        <div class="svc-chapter__visual reveal">
+          <img src="assets/extras/deposito1.png" alt="" loading="lazy" />
+          <div class="svc-chapter__visual-cap">
+            <span>01 · SPL</span>
+            <strong data-i18n="servicios.spl.lead">Sus equipos funcionando, siempre</strong>
           </div>
-          <div class="svc-block__body">
-            <h2 data-i18n="servicios.spl.title">Service Parts Logistics</h2>
-            <p data-i18n="service.spl.desc">Entregas en 2 a 4 horas en AMBA, servicios NFO y NBD para todo el país. Coordinación con los técnicos para una entrega personalizada.</p>
-            <p data-i18n="service.spl.moreText">Soportamos caídas de sistemas y mantenimientos urgentes con entregas ASAP, NFO y NBD, alineadas a la ventana operativa de cada técnico.</p>
-            <ul class="svc-block__tags">
-              <li>ASAP 2H</li>
-              <li>ASAP 4H</li>
-              <li>NFO</li>
-              <li>NBD</li>
+        </div>
+        <div class="svc-chapter__panel reveal">
+          <span class="svc-chapter__kicker" data-i18n="servicios.spl.kicker">SPL</span>
+          <h2 data-i18n="servicios.spl.title">Service Parts Logistics</h2>
+          <p class="svc-chapter__lead" data-i18n="servicios.spl.lead">Sus equipos funcionando, siempre</p>
+          <div class="svc-chapter__copy">
+            <p data-i18n="servicios.spl.p1">Logintec es su mejor solución de Supply Chain por el alcance de sus entregas de partes y componentes de recambio en tiempos críticos. Las entregas abarcan servicios en el mismo día para soportar caídas en sistemas, mantenimientos programados, desarrollo de nuevos productos, cambios de hardware durante la noche y logística reversa.</p>
+            <p data-i18n="servicios.spl.p2">Tanto los servicios terrestres como los aéreos, conjuntamente con el espacio de almacenaje, nos ayudan a proveer soluciones logísticas integrales a nuestros clientes, las cuales diseñamos para que cumplan sus acuerdos de niveles de servicio.</p>
+            <p data-i18n="servicios.spl.p3">Coordinamos y supervisamos todas las entregas en tiempo crítico hasta el usuario final, a los técnicos e ingenieros, y a los data centers/storages con hardware críticos. Logintec también se integra directamente con otros operadores logísticos fuera del ámbito de las entregas críticas.</p>
+            <p data-i18n="servicios.spl.p4">La cadena logística completa de Partes de Servicios incluye desde entregas express en 2 o 4 horas (AMBA), programadas, servicios NFO (avión) a las principales capitales del país y NBD (terrestres) a todo el país, recolección de partes defectuosas (logística reversa), entregas para reparación o destrucción, y otros servicios adicionales.</p>
+          </div>
+          <ul class="svc-chapter__tags">
+            <li>ASAP 2H</li>
+            <li>ASAP 4H</li>
+            <li>NFO</li>
+            <li>NBD</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- IOR -->
+    <section class="svc-chapter svc-chapter--flip svc-chapter--dark" id="ior">
+      <div class="svc-chapter__shell">
+        <div class="svc-chapter__visual reveal">
+          <img src="assets/extras/aeropuerto.jpeg" alt="" loading="lazy" />
+          <div class="svc-chapter__visual-cap">
+            <span>02 · IOR / EOR</span>
+            <strong data-i18n="servicios.ior.lead">Tener una entidad legal en Argentina</strong>
+          </div>
+        </div>
+        <div class="svc-chapter__panel reveal">
+          <span class="svc-chapter__kicker" data-i18n="servicios.ior.kicker">IOR / EOR</span>
+          <h2 data-i18n="servicios.ior.title">Importer &amp; Exporter of Record</h2>
+          <p class="svc-chapter__lead" data-i18n="servicios.ior.lead">Tener una entidad legal en Argentina</p>
+          <div class="svc-chapter__copy">
+            <p data-i18n="service.ior.detail.p1">Hemos desarrollado los servicios de IOR &amp; EOR para atender las necesidades de nuestros clientes internacionales.</p>
+            <p data-i18n="service.ior.detail.p2">En la mayoría de los países es esencial que su empresa tenga presencia fiscal para poder importar productos; y obtener una licencia de importador/exportador requiere mucho tiempo (varios meses) y mucho dinero. Nuestro servicio asiste a las empresas que no cuentan con dicha presencia corporativa, utilizando nuestra entidad de IOR &amp; EOR.</p>
+            <p data-i18n="service.ior.detail.p3">Logintec ofrece un rápido desarrollo y parametrización para los procesos de importación/exportación de partes y productos críticos; incluyendo:</p>
+            <ul class="svc-chapter__list">
+              <li data-i18n="service.ior.detail.li1">Actuar como el importador/exportador para la aduana y en relación a la declaración de los impuestos a la hora de la importación/exportación;</li>
+              <li data-i18n="service.ior.detail.li2">Ser la entidad responsable frente a las aduanas, a los impuestos y a otras autoridades reguladoras;</li>
+              <li data-i18n="service.ior.detail.li3">Solicitar las licencias o permisos para las importaciones/exportaciones;</li>
+              <li data-i18n="service.ior.detail.li4">Mantener los productos la duración mínima requerida bajo la ley local; y</li>
+              <li data-i18n="service.ior.detail.li5">Completar todos los formularios regulares asociados al pago de tasas e impuestos.</li>
             </ul>
           </div>
-        </article>
+          <ul class="svc-chapter__tags">
+            <li>IOR</li>
+            <li>EOR</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <article class="svc-block reveal" id="ior">
-          <div class="svc-block__meta">
-            <span class="svc-block__num">02</span>
-            <span class="svc-block__label" data-i18n="servicios.ior.kicker">IOR / EOR</span>
+    <!-- Warehousing -->
+    <section class="svc-chapter" id="warehousing">
+      <div class="svc-chapter__shell">
+        <div class="svc-chapter__visual reveal">
+          <img src="assets/extras/deposito2.jpeg" alt="" loading="lazy" />
+          <div class="svc-chapter__visual-cap">
+            <span>03 · Warehousing</span>
+            <strong data-i18n="servicios.wh.lead">Cubrimos todo el país</strong>
           </div>
-          <div class="svc-block__body">
-            <h2 data-i18n="servicios.ior.title">Importer &amp; Exporter of Record</h2>
-            <p data-i18n="service.ior.desc">IOR y EOR para clientes internacionales. Gestionamos toda la documentación para que sus productos ingresen al país sin contratiempos.</p>
-            <p data-i18n="service.ior.detail.p2">En la mayoría de los países es esencial que su empresa tenga presencia fiscal para poder importar productos. Nuestro servicio asiste a las empresas que no cuentan con dicha presencia corporativa.</p>
+        </div>
+        <div class="svc-chapter__panel reveal">
+          <span class="svc-chapter__kicker" data-i18n="servicios.wh.kicker">Almacenaje</span>
+          <h2 data-i18n="servicios.wh.title">Warehousing &amp; Transport</h2>
+          <p class="svc-chapter__lead" data-i18n="servicios.wh.lead">Cubrimos todo el país</p>
+          <div class="svc-chapter__copy">
+            <p data-i18n="servicios.wh.p1">En Logintec conocemos de urgencias. De mañana, de noche, y feriados. Las 24 horas, 7 días a la semana, 365 días al año. Los usuarios finales no pueden esperar a tener sus reemplazos disponibles, por lo tanto contamos con un warehouse en el cual almacenamos la mercadería de nuestros clientes, y así tener un acceso inmediato a las mismas. Tenemos la flexibilidad de almacenar piezas de muy poco tamaño, como unidades de memoria y/o cables, hasta unidades de gran tamaño como racks de servidores.</p>
+            <p data-i18n="servicios.wh.p2">Tenemos un gran equipo de trabajo cuyo objetivo es cuidar y administrar cada una de las partes críticas que almacenamos, pudiendo así brindar un excelente y rápido servicio, para que al momento que un cliente nos llame y nos solicite entregar un repuesto o recambio, podamos responder de una manera eficaz y eficiente.</p>
+            <p data-i18n="servicios.wh.p3">Es completamente necesario acompañar el servicio de almacenaje con una red de distribución que permita entregar estos reemplazos en el menor tiempo posible. Para ello ofrecemos servicios de entrega al usuario final que van desde las 2 horas en Capital Federal y el Gran Buenos Aires, hasta las 24/48/72 horas en el interior de la República Argentina.</p>
           </div>
-        </article>
-
-        <article class="svc-block reveal" id="warehousing">
-          <div class="svc-block__meta">
-            <span class="svc-block__num">03</span>
-            <span class="svc-block__label" data-i18n="servicios.wh.kicker">Almacenaje</span>
-          </div>
-          <div class="svc-block__body">
-            <h2 data-i18n="servicios.wh.title">Warehousing &amp; Transport</h2>
-            <p data-i18n="service.wh.desc">Contamos con un warehouse de gestión propia para poder optimizar los procesos, y reducir los tiempos de entrega.</p>
-            <p data-i18n="service.wh.moreText">Ofrecemos almacenaje tecnológico, entregas puerta a puerta en todo el país y CrossDocking para acortar la cadena de suministro de repuestos críticos.</p>
-          </div>
-        </article>
+          <ul class="svc-chapter__tags">
+            <li>Warehouse</li>
+            <li>CrossDocking</li>
+            <li>24/7</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -119,51 +174,65 @@
 
         <div class="svc-ops__grid reveal">
           <article class="svc-ops__item">
-            <span class="svc-ops__index">01</span>
-            <h3 data-i18n="welcome.svc1.title">Entregas ASAP</h3>
-            <p data-i18n="welcome.svc1.desc">Servicios de entregas en CABA y AMBA en 2 horas.</p>
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc1.title">Entregas ASAP</h3>
+              <p data-i18n="welcome.svc1.desc">Servicios de entregas en CABA y AMBA en 2 horas.</p>
+            </div>
           </article>
-          <article class="svc-ops__item">
-            <span class="svc-ops__index">02</span>
-            <h3 data-i18n="welcome.svc2.title">Documentación</h3>
-            <p data-i18n="welcome.svc2.desc">Realizamos todos los trámites para que sus productos ingresen al país.</p>
-          </article>
-          <article class="svc-ops__item">
-            <span class="svc-ops__index">03</span>
-            <h3 data-i18n="welcome.svc3.title">Servicio NFO</h3>
-            <p data-i18n="welcome.svc3.desc">Entregamos en las capitales del interior, embarcando en el primer vuelo disponible.</p>
-          </article>
-          <article class="svc-ops__item">
-            <span class="svc-ops__index">04</span>
-            <h3 data-i18n="welcome.svc4.title">Retorno de importaciones</h3>
-            <p data-i18n="welcome.svc4.desc">Enviamos sus productos al país de origen para realizar las reparaciones.</p>
-          </article>
-          <article class="svc-ops__item">
-            <span class="svc-ops__index">05</span>
-            <h3 data-i18n="welcome.svc5.title">Warehousing</h3>
-            <p data-i18n="welcome.svc5.desc">Contamos con un centro de almacenaje para sus productos tecnológicos.</p>
-          </article>
-          <article class="svc-ops__item">
-            <span class="svc-ops__index">06</span>
-            <h3 data-i18n="welcome.svc6.title">Transporte terrestre</h3>
-            <p data-i18n="welcome.svc6.desc">Contamos con una red que nos permite llegar a toda la República Argentina.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="svc-cta">
-      <div class="container svc-cta__inner reveal">
-        <div>
-          <h2 data-i18n="servicios.cta.title">¿Necesitás una solución a medida?</h2>
-          <p data-i18n="servicios.cta.desc">Contanos sobre tu operación y diseñamos el nivel de servicio que necesitás.</p>
+          <article class="svc-ops__item">
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc2.title">Documentación</h3>
+              <p data-i18n="welcome.svc2.desc">Realizamos todos los trámites para que sus productos ingresen al país.</p>
+            </div>
+          </article>
+
+          <article class="svc-ops__item">
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l18-8-8 18-2-8-8-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc3.title">Servicio NFO</h3>
+              <p data-i18n="welcome.svc3.desc">Entregamos en las capitales del interior, embarcando en el primer vuelo disponible.</p>
+            </div>
+          </article>
+
+          <article class="svc-ops__item">
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0115-6.7M21 12a9 9 0 01-15 6.7" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc4.title">Retorno de importaciones</h3>
+              <p data-i18n="welcome.svc4.desc">Enviamos sus productos al país de origen para realizar las reparaciones.</p>
+            </div>
+          </article>
+
+          <article class="svc-ops__item">
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-6 9 6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9v10h14V9" stroke-linejoin="round"/><path d="M9 19v-6h6v6" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc5.title">Warehousing</h3>
+              <p data-i18n="welcome.svc5.desc">Contamos con un centro de almacenaje para sus productos tecnológicos.</p>
+            </div>
+          </article>
+
+          <article class="svc-ops__item">
+            <div class="svc-ops__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M6 19V9l6-4 6 4v10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19v-5h4v5" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="svc-ops__item-body">
+              <h3 data-i18n="welcome.svc6.title">Transporte terrestre</h3>
+              <p data-i18n="welcome.svc6.desc">Contamos con una red que nos permite llegar a toda la República Argentina.</p>
+            </div>
+          </article>
         </div>
-        <a href="index.html#contacto" class="hero-pill-btn hero-pill-btn--on-dark">
-          <span data-i18n="nav.contact">Contáctenos</span>
-          <span class="hero-pill-btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
       </div>
     </section>
   </main>
