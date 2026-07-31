@@ -318,7 +318,8 @@ ul { list-style: none; }
 }
 
 .logo--footer .logo__img {
-  height: 38px;
+  height: 72px;
+  max-width: 80px;
 }
 
 .logo__word { color: #1e1e1e; }
@@ -1747,9 +1748,9 @@ a.contact-item:hover {
 .footer__brand .logo {
   margin-bottom: 6px;
   display: inline-flex;
-  padding: 10px 14px;
-  background: var(--white);
-  border-radius: 10px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
 }
 
 .footer__brand p {
