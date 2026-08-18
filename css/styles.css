@@ -6252,6 +6252,10 @@ body.eq-detail-open {
     padding-right: 88px;
   }
 
+  :root {
+    --header-height: 98px;
+  }
+
   .header__inner .logo__img {
     height: 32px;
     max-width: min(150px, 38vw);
@@ -6331,7 +6335,10 @@ body.eq-detail-open {
 
   .hero {
     grid-template-columns: 1fr;
-    min-height: auto;
+    grid-template-rows: 1fr 1fr;
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
   }
 
   .hero::after {
@@ -6343,21 +6350,62 @@ body.eq-detail-open {
   }
 
   .hero-panel {
-    min-height: min(72vh, 560px);
+    min-height: 0;
+    height: 100%;
     align-items: flex-end;
   }
 
   .hero-panel__content {
-    padding: 36px 28px 40px;
+    padding: 14px 20px 16px;
     max-width: 100%;
   }
 
+  .hero-panel__eyebrow {
+    margin-bottom: 6px;
+    font-size: 0.62rem;
+  }
+
+  .hero-panel__line {
+    width: 28px;
+    height: 2px;
+    margin-bottom: 8px;
+  }
+
   .hero-panel__title {
-    font-size: clamp(1.45rem, 5.5vw, 1.9rem);
+    font-size: clamp(1.15rem, 4.2vw, 1.4rem);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .hero-panel__desc {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .hero-panel__chips {
-    margin-bottom: 22px;
+    margin-bottom: 10px;
+    gap: 6px;
+  }
+
+  .hero-panel__chips li {
+    padding: 4px 10px;
+    font-size: 0.68rem;
+  }
+
+  .hero-panel__cta {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    gap: 8px;
+  }
+
+  .hero-panel__cta svg {
+    width: 14px;
+    height: 14px;
   }
 
   .hero-pill-btn { width: 100%; justify-content: space-between; }
@@ -6501,6 +6549,19 @@ body.eq-detail-open {
 
 @media (max-width: 480px) {
   .welcome-stats { grid-template-columns: 1fr; padding: 20px 16px; }
+
+  .hero-panel__content {
+    padding: 10px 16px 12px;
+  }
+
+  .hero-panel__desc {
+    -webkit-line-clamp: 2;
+    margin-bottom: 6px;
+  }
+
+  .hero-panel__chips {
+    margin-bottom: 8px;
+  }
 
   .container { padding: 0 20px; }
 
