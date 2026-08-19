@@ -128,7 +128,7 @@
         </div>
       </a>
 
-      <a href="dimensionadores.html" class="hero-panel hero-panel--volumetry">
+      <div class="hero-panel hero-panel--volumetry" data-hero-link="dimensionadores.html" role="link" tabindex="0" aria-label="Dimensionadores inteligentes">
         <img
           class="hero-panel__img"
           src="assets/extras/dimensionadores.png"
@@ -146,12 +146,22 @@
             <li data-i18n="hero.panel.volumetry.chip2">Peso y volumen</li>
             <li data-i18n="hero.panel.volumetry.chip3">Integraciones</li>
           </ul>
-          <span class="hero-panel__cta hero-panel__cta--ghost">
-            <span data-i18n="welcome.card.more">Conocé más</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <div class="hero-panel__footer">
+            <span class="hero-panel__cta hero-panel__cta--ghost">
+              <span data-i18n="welcome.card.more">Conocé más</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="hero-panel__partner" aria-label="Distribuidor oficial Cubiscan × Montra">
+              <span class="hero-panel__partner-txt" data-i18n="hero.panel.partner.label">Distribuidor oficial</span>
+              <img src="assets/marcas/cubiscan/logocubiscan.png" alt="Cubiscan" loading="lazy" />
+              <span class="hero-panel__partner-x" aria-hidden="true">×</span>
+              <a href="https://www.montrasolutions.com/" class="hero-panel__partner-montra-link montra-link" target="_blank" rel="noopener noreferrer" aria-label="Montra">
+                <img src="assets/marcas/cubiscan/logomontra.png" alt="Montra" loading="lazy" class="hero-panel__partner-montra" />
+              </a>
+            </div>
+          </div>
         </div>
-      </a>
+      </div>
     </section>
 
     <!-- Bienvenida -->

@@ -19,7 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initEquiposCatalog();
   initEquiposDetail();
   initWhatsAppFloat();
+  initMontraLinks();
+  initHeroPanelLinks();
 });
+
+function initHeroPanelLinks() {
+  document.querySelectorAll('[data-hero-link]').forEach((panel) => {
+    const href = panel.dataset.heroLink;
+    if (!href) return;
+
+    const navigate = () => {
+      window.location.href = href;
+    };
+
+    panel.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      navigate();
+    });
+
+    panel.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      navigate();
+    });
+  });
+}
+
+function initMontraLinks() {
+  document.querySelectorAll('.montra-link').forEach((link) => {
+    link.addEventListener('click', (e) => e.stopPropagation());
+  });
+}
 
 /* Floating WhatsApp CTA */
 function initWhatsAppFloat() {

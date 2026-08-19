@@ -26,6 +26,7 @@ const LogintecI18n = (() => {
       'hero.panel.volumetry.chip1': 'Medición 3D',
       'hero.panel.volumetry.chip2': 'Peso y volumen',
       'hero.panel.volumetry.chip3': 'Integraciones',
+      'hero.panel.partner.label': 'Distribuidor oficial',
 
       'welcome.title': '<span class="t-bold">Hola y </span><span class="t-accent">bienvenidos!</span>',
       'welcome.p1': 'Logintec es una empresa dedicada al diseño, gestión e implementación de valor agregado en Soluciones Logísticas. Principalmente enfocada en la Logística de Partes de Servicio (SPL), Repuestos críticos y Soluciones de Valor Agregado (VAS), tales como fullfilment, reflashing, screening y distribución.',
@@ -466,6 +467,7 @@ const LogintecI18n = (() => {
       'hero.panel.volumetry.chip1': '3D measurement',
       'hero.panel.volumetry.chip2': 'Weight & volume',
       'hero.panel.volumetry.chip3': 'Integrations',
+      'hero.panel.partner.label': 'Official distributor',
 
       'welcome.title': '<span class="t-bold">Hello and </span><span class="t-accent">welcome!</span>',
       'welcome.p1': 'Logintec is a company dedicated to designing, managing and implementing value-added Logistics Solutions. Mainly focused on Service Parts Logistics (SPL), critical spare parts and Value Added Services (VAS), such as fulfillment, reflashing, screening and distribution.',
